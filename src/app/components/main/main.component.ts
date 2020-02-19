@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataModel } from "../../models/data";
+import  data  from  '../../data.json';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  public dataModel: DataModel[];
+
   constructor() { }
 
   ngOnInit() {
+    this.dataModel = data;
   }
 
 }

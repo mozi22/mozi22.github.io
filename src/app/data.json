@@ -1,0 +1,9 @@
+[
+    {
+        "name": "launch",
+        "image": "http://localhost:4200/assets/images/launch.jpg",
+        "amazon": "https://www.amazon.com/Launch-Internet-Millionaires-Anything-Business/dp/1630470171",
+        "description": "\"Launch\" will build your business---fast. Whether you’ve already got a business or you’re itching to start one, this is a recipe for getting more traction.",
+        "read_time" : "9 mins"
+    }
+]

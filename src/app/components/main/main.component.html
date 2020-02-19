@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+  <main role="main">
+    <app-intro-banner></app-intro-banner>
+    
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <app-book-item *ngFor="let item of dataModel" [bookObj]="item"></app-book-item>
+        </div>
+      </div>
+    </div>
+
+  </main>
