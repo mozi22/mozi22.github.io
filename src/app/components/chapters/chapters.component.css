@@ -1,0 +1,14 @@
+#slide-container {
+  display: flex;
+  flex-direction: column;
+}
+#slide-container div {
+  border: 1px solid black;
+  flex: 1;
+}
+
+.next-chapter-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+}
