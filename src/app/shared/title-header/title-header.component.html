@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h1>{{ title }}</h1>
+    <p class="lead text-muted">{{ description }}</p>
+    <div class="row">
+        <div class="col">
+            <div class="peer" *ngIf="coinData">
+                <div class="btn-group btc-value-wrapper">
+                    <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="d-inline-flex align-items-center justify-content-end p-10">
+              <img width="34" height="34" class="mb-2" [src]="coinData.image" />
+              <h1 class="ml-2 coin-price">${{ coinData.price | number: '1.2-2' }}</h1>
+            </span>
+          </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item btn btn-lg" *ngFor="let coin of coins; let i = index" (click)="changeCoin(i)">
+                            <span class="d-inline-flex align-items-center justify-content-end p-10">
+                <img width="34" height="34" class="mb-2" [src]="coin.image" />
+                <h3 class="ml-2">{{ coin.name }}</h3>
+              </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

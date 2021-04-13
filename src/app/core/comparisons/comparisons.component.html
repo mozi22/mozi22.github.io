@@ -1,0 +1,20 @@
+<app-header></app-header>
+<app-title-header [title]="dataService.title" [description]="dataService.description" [coinData]="selectedCoin" (selectedCoin)="changeSelectedCoin($event)"></app-title-header>
+<div class="container">
+    <div class="row row-cols-1">
+        <div class="col">
+            <form class="mt-4">
+                <div class="form-group form-inline">
+                    <input class="form-control ml-2" [placeholder]="dataService?.placeholder" style="width: 100%" type="text" name="searchTerm" [(ngModel)]="dataService.searchTerm" />
+                    <span class="ml-3" *ngIf="dataService?.loading | async">Loading...</span>
+                </div>
+            </form>
+        </div>
+        <div class="col" [ngSwitch]="routeUrl">
+            <app-country *ngSwitchCase="availableRoutes[0]" [dataService]="dataService" [coinData]="selectedCoin"></app-country>
+            <app-billionaires *ngSwitchCase="availableRoutes[1]" [dataService]="dataService" [coinData]="selectedCoin"></app-billionaires>
+            <app-athletes *ngSwitchCase="availableRoutes[2]" [dataService]="dataService" [coinData]="selectedCoin"></app-athletes>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

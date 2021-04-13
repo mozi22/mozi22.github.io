@@ -1,0 +1,24 @@
+export interface CountryWiseData {
+  en: string | number;
+  de: string | number;
+  es: string | number;
+  fr: string | number;
+  it: string | number;
+  pl: string | number;
+  ro: string | number;
+  hu: string | number;
+  nl: string | number;
+  pt: string | number;
+  sv: string | number;
+  usd: string | number;
+  vi: string | number;
+  tr: string | number;
+  ru: string | number;
+  ja: string | number;
+  zh: string | number;
+  zh_tw: string | number;
+  ko: string | number;
+  ar: string | number;
+  th: string | number;
+  id: string | number;
+}
