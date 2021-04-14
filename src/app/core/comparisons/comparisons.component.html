@@ -11,9 +11,9 @@
             </form>
         </div>
         <div class="col" [ngSwitch]="routeUrl">
-            <app-country *ngSwitchCase="availableRoutes[0]" [dataService]="dataService" [coinData]="selectedCoin"></app-country>
-            <app-billionaires *ngSwitchCase="availableRoutes[1]" [dataService]="dataService" [coinData]="selectedCoin"></app-billionaires>
-            <app-athletes *ngSwitchCase="availableRoutes[2]" [dataService]="dataService" [coinData]="selectedCoin"></app-athletes>
+            <app-country *ngSwitchCase="availableRoutes[0]" [dataService]="narrow(dataService, 'country')" [coinData]="selectedCoin"></app-country>
+            <app-billionaires *ngSwitchCase="availableRoutes[1]" [dataService]="narrow(dataService, 'billionaire')" [coinData]="selectedCoin"></app-billionaires>
+            <app-athletes *ngSwitchCase="availableRoutes[2]" [dataService]="narrow(dataService, 'athlete')" [coinData]="selectedCoin"></app-athletes>
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
+import { ScrappedTypesMapper } from '@models/interfaces/general/ScrappedTypesMapper';
 import { ScrappedTypes } from '@models/types/ScrappedTypes';
 import { CoinService } from '@services/coin.service';
 import { FactoryService } from '@services/factory.service';
@@ -27,6 +28,10 @@ export class ComparisonsComponent implements OnInit, OnDestroy {
 
   private readonly _dataService: IService<ScrappedTypes>;
   private readonly subscriptionCanceller: Subject<void> = new Subject<void>();
+  public readonly narrow = <K extends keyof ScrappedTypesMapper>(
+    x: IService<any>,
+    k: K,
+  ): IService<ScrappedTypesMapper[K]> => x as any;
 
   constructor(private route: Router, private _factoryService: FactoryService, public coinService: CoinService) {
     this.selectedCoin = this.coinService.supportedCoins[0];

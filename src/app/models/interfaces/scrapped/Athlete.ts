@@ -1,7 +1,5 @@
-import { Country } from './Country';
-
 export interface Athlete {
   name: string;
-  country: Country;
+  image: string;
   sports: string;
 }

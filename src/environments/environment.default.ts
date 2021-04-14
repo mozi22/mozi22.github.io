@@ -32,4 +32,9 @@ export const defaultENV = {
     billionaires: 'billionaires',
     athletes: 'athletes',
   },
+  analytics: {
+    google: {
+      UID: 'G-TRQN5K59XJ',
+    },
+  },
 };

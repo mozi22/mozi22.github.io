@@ -11,8 +11,8 @@
         <tr *ngFor="let row of dataService?.dataTable | async; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
-                <img [src]="row.data.image" class="mr-2 flag-icon" />
-                <ngb-highlight [result]="row.data.name"></ngb-highlight>
+                <img [src]="row.data?.image" class="mr-2 flag-icon" />
+                <ngb-highlight [result]="row.data?.name"></ngb-highlight>
             </td>
             <td>
                 <ngb-highlight class="font-weight-bold" [result]="helperService.millifyTitle(row?.worth)"></ngb-highlight>
