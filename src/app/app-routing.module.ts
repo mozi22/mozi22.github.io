@@ -16,6 +16,10 @@ const routes: Routes = [
     path: environment.routes.athletes,
     component: ComparisonsComponent,
   },
+  {
+    path: environment.routes.cars,
+    component: ComparisonsComponent,
+  },
 ];
 
 @NgModule({

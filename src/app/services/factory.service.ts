@@ -8,6 +8,7 @@ import { Country } from '@models/interfaces/scrapped/Country';
 import { SeoService } from './seo.service';
 import { AthleteService } from './table/athlete.service';
 import { BillionaireService } from './table/billionaire.service';
+import { CarService } from './table/car.service';
 import { GdpService } from './table/gdp.service';
 
 @Injectable({
@@ -24,6 +25,8 @@ export class FactoryService {
         return new BillionaireService(this._pipe, this._seoService);
       case `/${environment.routes.athletes}`:
         return new AthleteService(this._pipe, this._seoService);
+      case `/${environment.routes.cars}`:
+        return new CarService(this._pipe, this._seoService);
       default:
         return new GdpService(this._pipe, this._seoService);
     }

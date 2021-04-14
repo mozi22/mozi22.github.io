@@ -1,0 +1,28 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col" class="border-0">#</th>
+            <th scope="col" class="border-0">Name</th>
+            <th scope="col" class="border-0">Worth (USD)</th>
+            <th scope="col" class="border-0">Value In Crypto (USD)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of dataService?.dataTable | async; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+                <img [src]="row.data?.image" class="mr-2 car-icon" />
+                <!-- <a [href]="row.data?.url" target="_blank"> -->
+                <ngb-highlight [result]="row.data?.name"></ngb-highlight>
+                <!-- </a> -->
+            </td>
+            <td>
+                <ngb-highlight class="font-weight-bold" [result]="helperService.millifyTitle(row?.worth)"></ngb-highlight>
+            </td>
+            <td>
+                <ngb-highlight class="gdp-as-coin p-1" [ngStyle]="{ 'background-color': coinData?.color }" [result]="row.worthInCoins | number"></ngb-highlight>
+                <span class="sub-text mt-1 ml-2 p-3">{{ helperService.millifyTitle(row?.worthInCoins) }}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

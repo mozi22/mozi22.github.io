@@ -22,6 +22,12 @@ export const defaultENV = {
           'cryptocurrencies, bitcoin, ethereum, crypto, roger federer, christiano ronaldo, tiger woods, lebron james, neymar, lionel messi, stephen curry, kevin durrant, kirk cousins, carson wentz',
         description: 'How many crypto do you need to become as rich as the richest athletes in the world.',
       },
+      cars: {
+        title: 'Super cars vs cryptocurrencies',
+        keywords:
+          'cryptocurrencies, bitcoin, ethereum, crypto, bugatti, pagani, mclaren, porsche, bmw, ford, gt, ferrari, lexus, lamborghini, aston martin, bentley, mercedes, audi',
+        description: 'How many crypto do you need to buy the most expensive cars in the world.',
+      },
     },
   },
   coingecko: {
@@ -31,6 +37,7 @@ export const defaultENV = {
     gdp: '',
     billionaires: 'billionaires',
     athletes: 'athletes',
+    cars: 'cars',
   },
   analytics: {
     google: {
