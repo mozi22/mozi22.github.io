@@ -8,8 +8,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from tqdm import tqdm
 
 from webdriver_manager.chrome import ChromeDriverManager
+
+print("\nScrapping Athletes")
+print(
+    "---------------------------------------------------------------------------------"
+)
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -45,7 +51,7 @@ soup = BeautifulSoup(h, "html.parser")
 
 # create data
 data = []
-for idx, record in enumerate(soup.find_all("tr")):
+for idx, record in enumerate(tqdm(soup.find_all("tr"))):
     if idx == 0:
         continue
     elif idx == 3:

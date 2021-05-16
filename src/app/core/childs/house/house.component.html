@@ -3,7 +3,9 @@
         <tr>
             <th scope="col" class="border-0">#</th>
             <th scope="col" class="border-0">Name</th>
-            <th scope="col" class="border-0">Billionaire (USD)</th>
+            <th scope="col" class="border-0">Year Built</th>
+            <th scope="col" class="border-0">Area</th>
+            <th scope="col" class="border-0">Worth</th>
             <th scope="col" class="border-0">Value In Crypto (USD)</th>
         </tr>
     </thead>
@@ -11,8 +13,14 @@
         <tr *ngFor="let row of dataService?.dataTable | async; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
-                <img [src]="row.data?.image" class="mr-2 flag-icon" />
-                <ngb-highlight [result]="row.data?.name"></ngb-highlight>
+                <img [src]="row.data.image" class="mr-2 flag-icon" />
+                <ngb-highlight [result]="row.data.name"></ngb-highlight>
+            </td>
+            <td>
+                <ngb-highlight [result]="row.data.year"></ngb-highlight>
+            </td>
+            <td>
+                <ngb-highlight [result]="row.data.area"></ngb-highlight>
             </td>
             <td>
                 <ngb-highlight class="font-weight-bold" [result]="helperService.millifyTitle(row?.worth)"></ngb-highlight>

@@ -1,0 +1,11 @@
+<div class="row my-3">
+    <div class="col">
+        <ul>
+            <li>
+                <b>Source: </b>
+                <a [href]="source" target="_blank">{{ source }}</a>
+            </li>
+            <li *ngFor="let comment of comments">{{ comment }}</li>
+        </ul>
+    </div>
+</div>

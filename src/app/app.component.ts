@@ -16,7 +16,9 @@ export class AppComponent {
   constructor(router: Router) {
     const navEndEvent$ = router.events.pipe(filter((e) => e instanceof NavigationEnd));
     navEndEvent$.subscribe((e: NavigationEnd | any) => {
-      gtag('config', environment.analytics.google.UID, { page_path: e.urlAfterRedirects });
+      if (!window.location.host.includes('localhost')) {
+        gtag('config', environment.analytics.google.UID, { page_path: e.urlAfterRedirects });
+      }
     });
   }
 }

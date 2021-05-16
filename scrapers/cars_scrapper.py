@@ -4,6 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
+print("\nScrapping Cars")
+print(
+    "---------------------------------------------------------------------------------"
+)
+
 
 def is_url_image(image_url):
     image_formats = ("image/png", "image/jpeg", "image/jpg")
@@ -86,7 +91,7 @@ for idx, result in enumerate(tqdm(tr[1:])):
 
     data.append(
         {
-            "worth": worth * 1,
+            "worth": worth * 1.2,
             "data": {
                 "url": f"https://fastestlaps.com{href}",
                 "name": name,

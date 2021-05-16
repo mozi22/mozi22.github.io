@@ -20,6 +20,10 @@ const routes: Routes = [
     path: environment.routes.cars,
     component: ComparisonsComponent,
   },
+  {
+    path: environment.routes.houses,
+    component: ComparisonsComponent,
+  },
 ];
 
 @NgModule({

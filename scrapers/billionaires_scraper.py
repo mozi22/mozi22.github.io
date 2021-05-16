@@ -1,6 +1,14 @@
-import requests
 import json
+
+import requests
+from tqdm import tqdm
+
 from millify import millify
+
+print("\nScrapping Billionaires")
+print(
+    "---------------------------------------------------------------------------------"
+)
 
 headers = {
     "Access-Control-Allow-Origin": "*",
@@ -15,7 +23,7 @@ req = requests.get(url, headers)
 
 data = []
 
-for row in json.loads(req.content):
+for row in tqdm(json.loads(req.content)):
     name = row["person"]["name"]
     originalValue = row["finalWorth"]
 

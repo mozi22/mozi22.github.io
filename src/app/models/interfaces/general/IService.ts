@@ -5,6 +5,8 @@ import { Worth } from '../scrapped/Worth';
 
 export interface IService<T> {
   readonly title: string;
+  readonly source: string;
+  readonly comments: string[];
   readonly description: string;
 
   dataTable: Observable<Worth<T>[]>;

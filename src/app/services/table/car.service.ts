@@ -20,6 +20,8 @@ export class CarService extends TableService<Car> implements IService<Car> {
   readonly _KEYWORDS: string = environment.SEO.static_pages.cars.keywords;
 
   readonly _PLACEHOLDER = 'Search... e.g Audi';
+  readonly source = 'https://fastestlaps.com/lists/top-most-expensive-cars';
+  readonly comments = ['Conversion applied from Euro to USD at $1.2 per Euro'];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);

@@ -5,11 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { SourceComponent } from './source/source.component';
 import { TitleHeaderComponent } from './title-header/title-header.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, TitleHeaderComponent],
+  declarations: [HeaderComponent, FooterComponent, TitleHeaderComponent, SourceComponent],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule],
-  exports: [HeaderComponent, FooterComponent, TitleHeaderComponent, FormsModule, ReactiveFormsModule],
+  exports: [HeaderComponent, FooterComponent, TitleHeaderComponent, SourceComponent, FormsModule, ReactiveFormsModule],
 })
 export class SharedModule {}

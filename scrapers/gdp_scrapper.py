@@ -1,6 +1,13 @@
-import requests
 import json
+
+import requests
 from bs4 import BeautifulSoup
+from tqdm import tqdm
+
+print("\nScrapping GDP")
+print(
+    "---------------------------------------------------------------------------------"
+)
 
 headers = {
     "Access-Control-Allow-Origin": "*",
@@ -15,8 +22,9 @@ req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, "html.parser")
 table = soup.find_all("table")[4].findChildren("tr")
 
+
 data = []
-for result in table[2:-1]:
+for result in tqdm(table[2:-1]):
 
     # gdp_per_WB
 

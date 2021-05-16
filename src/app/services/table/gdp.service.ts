@@ -17,6 +17,8 @@ export class GdpService extends TableService<Country> implements IService<Countr
   readonly _KEYWORDS: string = environment.SEO.static_pages.gdp.keywords;
 
   readonly _PLACEHOLDER = 'Search... e.g Germany';
+  readonly source = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)';
+  readonly comments = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);

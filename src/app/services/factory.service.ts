@@ -10,6 +10,7 @@ import { AthleteService } from './table/athlete.service';
 import { BillionaireService } from './table/billionaire.service';
 import { CarService } from './table/car.service';
 import { GdpService } from './table/gdp.service';
+import { HouseService } from './table/house.service';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +28,8 @@ export class FactoryService {
         return new AthleteService(this._pipe, this._seoService);
       case `/${environment.routes.cars}`:
         return new CarService(this._pipe, this._seoService);
+      case `/${environment.routes.houses}`:
+        return new HouseService(this._pipe, this._seoService);
       default:
         return new GdpService(this._pipe, this._seoService);
     }

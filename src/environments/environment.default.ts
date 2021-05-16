@@ -28,6 +28,12 @@ export const defaultENV = {
           'cryptocurrencies, bitcoin, ethereum, crypto, bugatti, pagani, mclaren, porsche, bmw, ford, gt, ferrari, lexus, lamborghini, aston martin, bentley, mercedes, audi',
         description: 'How many crypto do you need to buy the most expensive cars in the world.',
       },
+      houses: {
+        title: 'Houses vs cryptocurrencies',
+        keywords:
+          'cryptocurrencies, bitcoin, ethereum, crypto, houses, house, india, france, new york, silicon valley, mansion, rich',
+        description: 'How many crypto do you need to buy the most expensive houses in the world.',
+      },
     },
   },
   coingecko: {
@@ -38,10 +44,11 @@ export const defaultENV = {
     billionaires: 'billionaires',
     athletes: 'athletes',
     cars: 'cars',
+    houses: 'houses',
   },
   analytics: {
     google: {
-      UID: 'G-TRQN5K59XJ',
+      UID: 'UA-190907809-1',
     },
   },
 };

@@ -9,9 +9,10 @@ import { BillionairesComponent } from './childs/billionaires/billionaires.compon
 import { AthleteComponent } from './childs/athlete/athlete.component';
 import { CoinValuePredictorComponent } from './coin-value-predictor/coin-value-predictor.component';
 import { CarComponent } from './childs/car/car.component';
+import { HouseComponent } from './childs/house/house.component';
 
 @NgModule({
-  declarations: [ComparisonsComponent, NgbdSortableHeader, CountryComponent, BillionairesComponent, AthleteComponent, CoinValuePredictorComponent, CarComponent],
+  declarations: [ComparisonsComponent, NgbdSortableHeader, CountryComponent, BillionairesComponent, AthleteComponent, CoinValuePredictorComponent, CarComponent, HouseComponent],
   imports: [CommonModule, SharedModule, NgbModule],
   providers: [DecimalPipe],
 })

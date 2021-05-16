@@ -17,6 +17,8 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
   readonly _KEYWORDS: string = environment.SEO.static_pages.billionaires.keywords;
 
   readonly _PLACEHOLDER = 'Search... e.g Bill';
+  readonly source = 'https://forbes400.herokuapp.com/api/forbes400';
+  readonly comments = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
