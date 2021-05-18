@@ -16,6 +16,8 @@
             <app-athletes *ngSwitchCase="availableRoutes[2]" [dataService]="narrow(dataService, 'athlete')" [coinData]="selectedCoin"></app-athletes>
             <app-car *ngSwitchCase="availableRoutes[3]" [dataService]="narrow(dataService, 'car')" [coinData]="selectedCoin"></app-car>
             <app-house *ngSwitchCase="availableRoutes[4]" [dataService]="narrow(dataService, 'house')" [coinData]="selectedCoin"></app-house>
+            <app-snp500 *ngSwitchCase="availableRoutes[5]" [dataService]="narrow(dataService, 'snp500')" [coinData]="selectedCoin"></app-snp500>
+            <app-crypto *ngSwitchCase="availableRoutes[6]" [dataService]="narrow(dataService, 'crypto')" [coinData]="selectedCoin"></app-crypto>
         </div>
     </div>
 </div>

@@ -5,18 +5,21 @@ import { IService } from '@models/interfaces/general/IService';
 import { Athlete } from '@models/interfaces/scrapped/Athlete';
 import { Billionaire } from '@models/interfaces/scrapped/Billionaire';
 import { Country } from '@models/interfaces/scrapped/Country';
+import { CoinService } from './coin.service';
 import { SeoService } from './seo.service';
 import { AthleteService } from './table/athlete.service';
 import { BillionaireService } from './table/billionaire.service';
 import { CarService } from './table/car.service';
+import { CryptoService } from './table/crypto.service';
 import { GdpService } from './table/gdp.service';
 import { HouseService } from './table/house.service';
+import { Snp500Service } from './table/snp500.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FactoryService {
-  constructor(private _pipe: DecimalPipe, private _seoService: SeoService) {}
+  constructor(private _pipe: DecimalPipe, private _seoService: SeoService, private _coinService: CoinService) {}
 
   public getComparisonService(routeUrl: string): IService<Country | Billionaire | Athlete> {
     switch (routeUrl) {
@@ -30,6 +33,10 @@ export class FactoryService {
         return new CarService(this._pipe, this._seoService);
       case `/${environment.routes.houses}`:
         return new HouseService(this._pipe, this._seoService);
+      case `/${environment.routes.snp500}`:
+        return new Snp500Service(this._pipe, this._seoService);
+      case `/${environment.routes.crypto}`:
+        return new CryptoService(this._pipe, this._seoService, this._coinService);
       default:
         return new GdpService(this._pipe, this._seoService);
     }

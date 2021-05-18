@@ -24,6 +24,14 @@ const routes: Routes = [
     path: environment.routes.houses,
     component: ComparisonsComponent,
   },
+  {
+    path: environment.routes.snp500,
+    component: ComparisonsComponent,
+  },
+  {
+    path: environment.routes.crypto,
+    component: ComparisonsComponent,
+  },
 ];
 
 @NgModule({

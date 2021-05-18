@@ -34,6 +34,18 @@ export const defaultENV = {
           'cryptocurrencies, bitcoin, ethereum, crypto, houses, house, india, france, new york, silicon valley, mansion, rich',
         description: 'How many crypto do you need to buy the most expensive houses in the world.',
       },
+      snp500: {
+        title: 'S&P 500 vs cryptocurrencies',
+        keywords:
+          'cryptocurrencies, bitcoin, ethereum, crypto, s&p500, microsoft, apple, google, facebook, bigtech, companies, marketcap',
+        description:
+          'How many crypto do you need to buy to be equivalent to the worth of largest s&p500 companies in the world.',
+      },
+      crypto: {
+        title: 'cryptocurrencies vs cryptocurrencies',
+        keywords: 'cryptocurrencies, bitcoin, ethereum, crypto',
+        description: 'How many crypto do you have to own to buy other cryptocurrencies.',
+      },
     },
   },
   coingecko: {
@@ -45,6 +57,8 @@ export const defaultENV = {
     athletes: 'athletes',
     cars: 'cars',
     houses: 'houses',
+    snp500: 'snp500',
+    crypto: 'crypto',
   },
   analytics: {
     google: {

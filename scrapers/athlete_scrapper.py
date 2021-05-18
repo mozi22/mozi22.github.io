@@ -77,6 +77,8 @@ for idx, record in enumerate(tqdm(soup.find_all("tr"))):
         }
     )
 
+driver.close()
+
 # save
 with open("../src/assets/jsons/athlete.json", "w") as file:
     file.write(json.dumps(data))

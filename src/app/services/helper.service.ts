@@ -9,11 +9,11 @@ export class HelperService {
     return num.toString();
   }
 
-  public millifyTitle(worth: number | undefined): string {
+  public millifyTitle(worth: number | undefined, precision: number = 2): string {
     if (!worth) return '';
 
     return millify(worth, {
-      precision: 2,
+      precision,
     });
   }
 }

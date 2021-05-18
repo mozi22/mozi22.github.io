@@ -93,18 +93,17 @@ export class CoinService {
 
     this._coins$.next(this._supportedCoin);
   }
-
-  private setCoinPrice(coinId: string, newPrice: number): void {
-    this._supportedCoin.forEach((coin: Coin) => {
-      coin.price = coin.name === coinId ? newPrice : coin.price;
-    });
-  }
-
   public get coins(): Observable<Coin[]> {
     return this._coins$.asObservable();
   }
 
   public get intervalID(): number {
     return this._TIME_INTERVALID;
+  }
+
+  private setCoinPrice(coinId: string, newPrice: number): void {
+    this._supportedCoin.forEach((coin: Coin) => {
+      coin.price = coin.name === coinId ? newPrice : coin.price;
+    });
   }
 }
