@@ -5,6 +5,7 @@ import { Car } from '../scrapped/Car';
 import { Crypto } from '../scrapped/Crypto';
 import { House } from '../scrapped/House';
 import { Snp500 } from '../scrapped/Snp500';
+import { Wealthy } from '../scrapped/Wealthy';
 
 export interface ScrappedTypesMapper {
   billionaire: Billionaire;
@@ -14,4 +15,5 @@ export interface ScrappedTypesMapper {
   house: House;
   snp500: Snp500;
   crypto: Crypto;
+  wealthy: Wealthy;
 }

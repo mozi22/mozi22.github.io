@@ -26,6 +26,7 @@ export class ComparisonsComponent implements OnInit, OnDestroy {
     `/${environment.routes.houses}`,
     `/${environment.routes.snp500}`,
     `/${environment.routes.crypto}`,
+    `/${environment.routes.wealthy}`,
   ];
 
   private _selectedCoinIdx: number = 0;

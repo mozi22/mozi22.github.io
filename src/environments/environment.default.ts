@@ -41,6 +41,12 @@ export const defaultENV = {
         description:
           'How many crypto do you need to buy to be equivalent to the worth of largest s&p500 companies in the world.',
       },
+      wealthy: {
+        title: 'Cryptocoins needed to become wealthy',
+        keywords: 'cryptocurrencies, bitcoin, ethereum, crypto, wealthy, rich, master',
+        description:
+          'How many crypto coins do you need to own to be considered among the 1% population in different countries around the world.',
+      },
       crypto: {
         title: 'cryptocurrencies vs cryptocurrencies',
         keywords: 'cryptocurrencies, bitcoin, ethereum, crypto',
@@ -59,6 +65,7 @@ export const defaultENV = {
     houses: 'houses',
     snp500: 'snp500',
     crypto: 'crypto',
+    wealthy: 'wealthy',
   },
   analytics: {
     google: {

@@ -32,6 +32,10 @@ const routes: Routes = [
     path: environment.routes.crypto,
     component: ComparisonsComponent,
   },
+  {
+    path: environment.routes.wealthy,
+    component: ComparisonsComponent,
+  },
 ];
 
 @NgModule({
