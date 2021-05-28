@@ -23,7 +23,7 @@ export class CryptoService extends TableService<Crypto> implements IService<Cryp
 
   readonly _PLACEHOLDER = 'Search... e.g Bitcoin';
   readonly source = 'http://coingecko.com/';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   private readonly subscriptionCanceller: Subject<void> = new Subject<void>();
 

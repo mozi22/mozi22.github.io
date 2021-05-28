@@ -6,6 +6,7 @@ import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
 import { Athlete } from '@models/interfaces/scrapped/Athlete';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
 import { Observable } from 'rxjs';
@@ -18,12 +19,15 @@ export class AthleteService extends TableService<Athlete> implements IService<At
 
   readonly _PLACEHOLDER = 'Search... e.g Neymar';
   readonly source = 'https://www.forbes.com/athletes/list';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (athletes as any).default as Worth<Athlete>[];
+    const scrappedData = (athletes as any).default as ScrappedData<Athlete>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

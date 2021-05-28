@@ -1,6 +1,7 @@
 import json
 import re
 import time
+from datetime import datetime
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -69,4 +70,4 @@ driver.close()
 
 # save
 with open("../src/assets/jsons/snp500.json", "w") as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps({"date": datetime.now().strftime("%d %B, %Y"), "data": data}))

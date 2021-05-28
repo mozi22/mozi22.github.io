@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -33,7 +34,7 @@ for result in tqdm(table[2:-1]):
 
     table_td = result.find_all("td")
 
-    country_gdp = float(table_td[2].text.replace(",", ""))
+    country_gdp = float(table_td[1].text.replace(",", ""))
     country_gdp = round(country_gdp) if country_gdp > 1 else country_gdp
 
     data.append(
@@ -48,4 +49,4 @@ for result in tqdm(table[2:-1]):
 
 
 with open("../src/assets/jsons/country_gdp.json", "w") as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps({"date": datetime.now().strftime("%d %B, %Y"), "data": data}))

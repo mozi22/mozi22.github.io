@@ -6,6 +6,7 @@ import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
 import { Billionaire } from '@models/interfaces/scrapped/Billionaire';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
 import { Observable } from 'rxjs';
@@ -18,12 +19,16 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
 
   readonly _PLACEHOLDER = 'Search... e.g Bill';
   readonly source = 'https://forbes400.herokuapp.com/api/forbes400';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (billionaires as any).default as Worth<Billionaire>[];
+    const scrappedData = (billionaires as any).default as ScrappedData<Billionaire>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
+
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

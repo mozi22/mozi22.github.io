@@ -52,13 +52,23 @@ export const defaultENV = {
         keywords: 'cryptocurrencies, bitcoin, ethereum, crypto',
         description: 'How many crypto do you have to own to buy other cryptocurrencies.',
       },
+      nba: {
+        title: 'NBA Stars vs cryptocurrencies',
+        keywords: 'cryptocurrencies, bitcoin, ethereum, crypto, bryant, curry, basketball, nba, sports, players',
+        description: 'How many crypto do you have to own to be as rich as richest NBA stars.',
+      },
+      presidentialCandidates: {
+        title: 'US Presidential Candidates Worth In Cryptocurrencies',
+        keywords: 'cryptocurrencies, bitcoin, ethereum, crypto, trump, usa, elections, politics',
+        description: 'How rich were the 2020 US presidential candidates in terms of crypto.',
+      },
     },
   },
   coingecko: {
     api_base: 'https://api.coingecko.com/api/v3',
   },
   routes: {
-    gdp: '',
+    gdp: 'gdp',
     billionaires: 'billionaires',
     athletes: 'athletes',
     cars: 'cars',
@@ -66,6 +76,9 @@ export const defaultENV = {
     snp500: 'snp500',
     crypto: 'crypto',
     wealthy: 'wealthy',
+    nba: 'nba',
+    presidentialCandidates: 'pres-candidates',
+    home: '',
   },
   analytics: {
     google: {

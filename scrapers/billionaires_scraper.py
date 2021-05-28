@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import requests
 from tqdm import tqdm
@@ -42,4 +43,4 @@ for row in tqdm(json.loads(req.content)):
     )
 
 with open("../src/assets/jsons/billionaires.json", "w") as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps({"date": datetime.now().strftime("%d %B, %Y"), "data": data}))

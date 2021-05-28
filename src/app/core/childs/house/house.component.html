@@ -6,7 +6,7 @@
             <th scope="col" class="border-0">Year Built</th>
             <th scope="col" class="border-0">Area</th>
             <th scope="col" class="border-0">Worth</th>
-            <th scope="col" class="border-0">Value In Crypto (USD)</th>
+            <th scope="col" class="border-0">Worth In Crypto</th>
         </tr>
     </thead>
     <tbody>
@@ -32,4 +32,4 @@
         </tr>
     </tbody>
 </table>
-<app-source [source]="dataService.source"></app-source>
+<app-source [source]="dataService.source" [comments]="dataService.comments"></app-source>

@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -102,4 +103,4 @@ for idx, result in enumerate(tqdm(tr[1:])):
 
 
 with open("../src/assets/jsons/cars.json", "w") as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps({"date": datetime.now().strftime("%d %B, %Y"), "data": data}))

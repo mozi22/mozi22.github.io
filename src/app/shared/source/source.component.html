@@ -5,7 +5,7 @@
                 <b>Source: </b>
                 <a [href]="source" target="_blank">{{ source }}</a>
             </li>
-            <li *ngFor="let comment of comments">{{ comment }}</li>
+            <li *ngFor="let comment of comments" [innerHtml]="comment"></li>
         </ul>
     </div>
 </div>

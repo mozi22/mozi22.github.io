@@ -33,6 +33,13 @@
                         "styles": [
                             "src/styles.scss",
                             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+
+                            "./src/assets/vendors/owl/mdi/css/materialdesignicons.min.css",
+                            "./src/assets/vendors/owl/aos/dist/aos.css/aos.css",
+                            "./src/assets/vendors/owl/owl.carousel/dist/assets/owl.carousel.min.css",
+                            "./src/assets/vendors/owl/owl.carousel/dist/assets/owl.theme.default.min.css",
+                            "./src/assets/css/owl/style-owl.css",
+
                             "./src/assets/css/bootstrap-slider.min.css",
                             "./node_modules/bootstrap-icons/font/bootstrap-icons.css"
                         ],
@@ -41,7 +48,9 @@
                             "./src/assets/js/jquery.color.js",
                             "./src/assets/js/bootstrap-slider.min.js",
                             "./node_modules/popper.js/dist/umd/popper.min.js",
-                            "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+                            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+
+                            "./src/assets/vendors/owl/owl.carousel/dist/owl.carousel.min.js"
                         ]
                     },
                     "configurations": {

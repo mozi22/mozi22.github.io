@@ -5,7 +5,7 @@
             <th scope="col" class="border-0">Name</th>
             <th scope="col" class="border-0">Sports</th>
             <th scope="col" class="border-0">Worth (USD)</th>
-            <th scope="col" class="border-0">Value In Crypto (USD)</th>
+            <th scope="col" class="border-0">Worth In Crypto</th>
         </tr>
     </thead>
     <tbody>
@@ -28,4 +28,4 @@
         </tr>
     </tbody>
 </table>
-<app-source [source]="dataService.source"></app-source>
+<app-source [source]="dataService.source" [comments]="dataService.comments"></app-source>

@@ -5,6 +5,7 @@ import { SortEvent } from '@directives/sortable.directive';
 import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Wealthy } from '@models/interfaces/scrapped/Wealthy';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
@@ -22,12 +23,16 @@ export class WealthyService extends TableService<Wealthy> implements IService<We
   readonly _PLACEHOLDER = 'Search... e.g China';
   readonly source =
     'https://www.knightfrank.com/research/article/2021-03-01-how-much-wealth-gets-you-into-the-global-top-1';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (WealthyJSON as any).default as Worth<Wealthy>[];
+    const scrappedData = (WealthyJSON as any).default as ScrappedData<Wealthy>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
+
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

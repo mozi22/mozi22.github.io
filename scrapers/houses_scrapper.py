@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -56,4 +57,4 @@ for result in tqdm(table[1:-1]):
 
 # save
 with open("../src/assets/jsons/houses.json", "w") as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps({"date": datetime.now().strftime("%d %B, %Y"), "data": data}))

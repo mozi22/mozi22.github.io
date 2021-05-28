@@ -6,6 +6,7 @@ import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
 import { Country } from '@models/interfaces/scrapped/Country';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Snp500 } from '@models/interfaces/scrapped/Snp500';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
@@ -22,12 +23,15 @@ export class Snp500Service extends TableService<Snp500> implements IService<Snp5
 
   readonly _PLACEHOLDER = 'Search... e.g Google';
   readonly source = 'https://fknol.com/list/market-cap-sp-500-index-companies.php';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (Snp500JSON as any).default as Worth<Snp500>[];
+    const scrappedData = (Snp500JSON as any).default as ScrappedData<Snp500>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

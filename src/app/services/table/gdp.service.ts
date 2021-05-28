@@ -6,6 +6,7 @@ import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
 import { Country } from '@models/interfaces/scrapped/Country';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
 import { Observable } from 'rxjs';
@@ -18,12 +19,15 @@ export class GdpService extends TableService<Country> implements IService<Countr
 
   readonly _PLACEHOLDER = 'Search... e.g Germany';
   readonly source = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (countryGDP as any).default as Worth<Country>[];
+    const scrappedData = (countryGDP as any).default as ScrappedData<Country>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

@@ -6,6 +6,7 @@ import { environment } from '@env/environment';
 import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
 import { Car } from '@models/interfaces/scrapped/Car';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
 import { Observable } from 'rxjs';
@@ -21,12 +22,16 @@ export class CarService extends TableService<Car> implements IService<Car> {
 
   readonly _PLACEHOLDER = 'Search... e.g Audi';
   readonly source = 'https://fastestlaps.com/lists/top-most-expensive-cars';
-  readonly comments = ['Conversion applied from Euro to USD at $1.2 per Euro'];
+  readonly comments: string[] = ['Conversion applied from Euro to USD at $1.2 per Euro'];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (cars as any).default as Worth<Car>[];
+    const scrappedData = (cars as any).default as ScrappedData<Car>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
+
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

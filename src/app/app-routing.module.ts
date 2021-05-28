@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComparisonsComponent } from '@core/comparisons/comparisons.component';
+import { HomeComponent } from '@core/home/home.component';
 import { environment } from '@env/environment';
 
 const routes: Routes = [
@@ -35,6 +36,18 @@ const routes: Routes = [
   {
     path: environment.routes.wealthy,
     component: ComparisonsComponent,
+  },
+  {
+    path: environment.routes.nba,
+    component: ComparisonsComponent,
+  },
+  {
+    path: environment.routes.presidentialCandidates,
+    component: ComparisonsComponent,
+  },
+  {
+    path: environment.routes.home,
+    component: HomeComponent,
   },
 ];
 

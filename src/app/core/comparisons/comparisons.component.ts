@@ -27,6 +27,8 @@ export class ComparisonsComponent implements OnInit, OnDestroy {
     `/${environment.routes.snp500}`,
     `/${environment.routes.crypto}`,
     `/${environment.routes.wealthy}`,
+    `/${environment.routes.nba}`,
+    `/${environment.routes.presidentialCandidates}`,
   ];
 
   private _selectedCoinIdx: number = 0;

@@ -1,6 +1,7 @@
 import json
 import re
 import time
+from datetime import datetime
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -77,8 +78,7 @@ for idx, record in enumerate(tqdm(soup.find_all("tr"))):
         }
     )
 
-driver.close()
 
 # save
 with open("../src/assets/jsons/athlete.json", "w") as file:
-    file.write(json.dumps(data))
+    file.write(json.dumps({"date": datetime.now().strftime("%d %B, %Y"), "data": data}))

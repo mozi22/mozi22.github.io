@@ -1,0 +1,172 @@
+{
+    "data": [{
+            "worth": 68100000000,
+            "data": {
+                "name": "Michael Bloomberg",
+                "image": "https://images.jifo.co/36490175_1574453755456.png"
+            }
+        },
+        {
+            "worth": 3100000000,
+            "data": {
+                "name": "Donald Trump",
+                "image": "https://images.jifo.co/36490175_1563999887762.jpg"
+            }
+        },
+        {
+            "worth": 1600000000,
+            "data": {
+                "name": "Tom Steyer",
+                "image": "https://images.jifo.co/36490175_1564000216543.jpg"
+            }
+        },
+        {
+            "worth": 200000000,
+            "data": {
+                "name": "John Delaney",
+                "image": "https://images.jifo.co/36490175_1564000723050.jpg"
+            }
+        },
+        {
+            "worth": 15000000,
+            "data": {
+                "name": "Michael Bennet",
+                "image": "https://images.jifo.co/36490175_1564000902278.jpg"
+            }
+        },
+        {
+            "worth": 12000000,
+            "data": {
+                "name": "Elizabeth Warren",
+                "image": "https://images.jifo.co/36490175_1564001056309.jpg"
+            }
+        },
+        {
+            "worth": 9000000,
+            "data": {
+                "name": "Joe Biden",
+                "image": "https://images.jifo.co/36490175_1564003436703.jpg"
+            }
+        },
+        {
+            "worth": 6000000,
+            "data": {
+                "name": "Kamala Harris",
+                "image": "https://images.jifo.co/36490175_1575401025928.png"
+            }
+        },
+        {
+            "worth": 6000000,
+            "data": {
+                "name": "Joe Sestak",
+                "image": "https://images.jifo.co/36490175_1575386271427.png"
+            }
+        },
+        {
+            "worth": 4000000,
+            "data": {
+                "name": "Beto O'Rourke",
+                "image": "https://images.jifo.co/36490175_1564002052275.jpg"
+            }
+        },
+        {
+            "worth": 2500000,
+            "data": {
+                "name": "Bill de Blasio",
+                "image": "https://images.jifo.co/36490175_1564002289052.jpg"
+            }
+        },
+        {
+            "worth": 2500000,
+            "data": {
+                "name": "Bernie Sanders",
+                "image": "https://images.jifo.co/36490175_1564002491049.jpg"
+            }
+        },
+        {
+            "worth": 2000000,
+            "data": {
+                "name": "Jay Inslee",
+                "image": "https://images.jifo.co/36490175_1564064267790.jpg"
+            }
+        },
+        {
+            "worth": 2500000,
+            "data": {
+                "name": "Amy Klobuchar",
+                "image": "https://images.jifo.co/36490175_1564003436701.jpg"
+            }
+        },
+        {
+            "worth": 1500000,
+            "data": {
+                "name": "Cory Booker",
+                "image": "https://images.jifo.co/36490175_1564062549199.jpg"
+            }
+        },
+        {
+            "worth": 1500000,
+            "data": {
+                "name": "Steve Bullock",
+                "image": "https://images.jifo.co/36490175_1575298833056.png"
+            }
+        },
+        {
+            "worth": 1500000,
+            "data": {
+                "name": "Marianne Williamson",
+                "image": "https://images.jifo.co/36490175_1564062445536.jpg"
+            }
+        },
+        {
+            "worth": 1000000,
+            "data": {
+                "name": "Kirsten Gillibrand ",
+                "image": "https://images.jifo.co/36490175_1564001766629.jpg"
+            }
+        },
+        {
+            "worth": 1000000,
+            "data": {
+                "name": "Seth Moulton",
+                "image": "https://images.jifo.co/36490175_1564063410287.jpg"
+            }
+        },
+        {
+            "worth": 1000000,
+            "data": {
+                "name": "Andrew Yang",
+                "image": "https://images.jifo.co/36490175_1564062928107.jpg"
+            }
+        },
+        {
+            "worth": 700000,
+            "data": {
+                "name": "Julian Castro",
+                "image": "https://images.jifo.co/36490175_1564063152775.jpg"
+            }
+        },
+        {
+            "worth": 500000,
+            "data": {
+                "name": "Tulsi Gabbard",
+                "image": "https://images.jifo.co/36490175_1564062656764.jpg"
+            }
+        },
+        {
+            "worth": 500000,
+            "data": {
+                "name": "Tim Ryan",
+                "image": "https://images.jifo.co/36490175_1564063230577.jpg"
+            }
+        },
+        {
+            "worth": 100000,
+            "data": {
+                "name": "Pete Buttigieg",
+                "image": "https://images.jifo.co/36490175_1564063324471.jpg"
+            }
+        }
+    ],
+    "date": "28 May, 2021"
+}

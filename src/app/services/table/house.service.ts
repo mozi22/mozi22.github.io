@@ -7,6 +7,7 @@ import { Coin } from '@models/interfaces/coingecko/Coin';
 import { IService } from '@models/interfaces/general/IService';
 import { Country } from '@models/interfaces/scrapped/Country';
 import { House } from '@models/interfaces/scrapped/House';
+import { ScrappedData } from '@models/interfaces/scrapped/ScrappedData';
 import { Worth } from '@models/interfaces/scrapped/Worth';
 import { SeoService } from '@services/seo.service';
 import { Observable } from 'rxjs';
@@ -22,12 +23,15 @@ export class HouseService extends TableService<House> implements IService<House>
 
   readonly _PLACEHOLDER = 'Search... e.g Palm';
   readonly source = 'https://www.beautifullife.info/urban-design/15-of-the-most-expensive-houses-in-the-world/';
-  readonly comments = [];
+  readonly comments: string[] = [];
 
   constructor(pipe: DecimalPipe, private seoService: SeoService) {
     super(pipe);
 
-    this._originalDataTable = this._latestDataTable = (Houses as any).default as Worth<House>[];
+    const scrappedData = (Houses as any).default as ScrappedData<House>;
+    this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
+
+    this._originalDataTable = this._latestDataTable = scrappedData.data;
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 
