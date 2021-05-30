@@ -1,0 +1,74 @@
+{
+    "data": [{
+            "worth": 95400000,
+            "data": {
+                "name": "LeBron James",
+                "image": "https://images.jifo.co/36490175_1611686891871.png"
+            }
+        },
+        {
+            "worth": 74400000,
+            "data": {
+                "name": "Stephen Curry",
+                "image": "https://images.jifo.co/36490175_1611768038145.png"
+            }
+        },
+        {
+            "worth": 65200000,
+            "data": {
+                "name": "Kevin Durant",
+                "image": "https://images.jifo.co/36490175_1611774169692.png"
+            }
+        },
+        {
+            "worth": 58100000,
+            "data": {
+                "name": "Russell Westbrook",
+                "image": "https://images.jifo.co/36490175_1611775609664.png"
+            }
+        },
+        {
+            "worth": 50000000,
+            "data": {
+                "name": "James Harden",
+                "image": "https://images.jifo.co/36490175_1611776177821.png"
+            }
+        },
+        {
+            "worth": 49000000,
+            "data": {
+                "name": "Giannis Antetokounmpo",
+                "image": "https://images.jifo.co/36490175_1611776397601.png"
+            }
+        },
+        {
+            "worth": 43300000,
+            "data": {
+                "name": "Klay Thompson",
+                "image": "https://images.jifo.co/36490175_1611721536457.png"
+            }
+        },
+        {
+            "worth": 43000000,
+            "data": {
+                "name": "Kyrie Irving",
+                "image": "https://images.jifo.co/36490175_1611776987968.png"
+            }
+        },
+        {
+            "worth": 40100000,
+            "data": {
+                "name": "Chris Paul",
+                "image": "https://images.jifo.co/36490175_1611777509875.png"
+            }
+        },
+        {
+            "worth": 39000000,
+            "data": {
+                "name": "Damian Lillard",
+                "image": "https://images.jifo.co/36490175_1611777863930.png"
+            }
+        }
+    ],
+    "date": "27 May, 2021"
+}

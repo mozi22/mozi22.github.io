@@ -1,0 +1,214 @@
+{
+    "data": [{
+            "worth": 7900000,
+            "data": {
+                "name": "Monaco",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Monaco.svg/1280px-Flag_of_Monaco.svg.png"
+            }
+        },
+        {
+            "worth": 4400000,
+            "data": {
+                "name": "USA",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"
+            }
+        },
+        {
+            "worth": 5100000,
+            "data": {
+                "name": "Switzerland",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"
+            }
+        },
+        {
+            "worth": 2900000,
+            "data": {
+                "name": "Singapore",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/23px-Flag_of_Singapore.svg.png"
+            }
+        },
+        {
+            "worth": 2800000,
+            "data": {
+                "name": "New Zealand",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/23px-Flag_of_New_Zealand.svg.png"
+            }
+        },
+        {
+            "worth": 2800000,
+            "data": {
+                "name": "Hong Kong",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Flag_of_Hong_Kong.svg/23px-Flag_of_Hong_Kong.svg.png"
+            }
+        },
+        {
+            "worth": 2800000,
+            "data": {
+                "name": "Australia",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/23px-Flag_of_Australia_%28converted%29.svg.png"
+            }
+        },
+        {
+            "worth": 2600000,
+            "data": {
+                "name": "Ireland",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/23px-Flag_of_Ireland.svg.png"
+            }
+        },
+        {
+            "worth": 2100000,
+            "data": {
+                "name": "France",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
+            }
+        },
+        {
+            "worth": 2000000,
+            "data": {
+                "name": "Germany",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
+            }
+        },
+        {
+            "worth": 1800000,
+            "data": {
+                "name": "UK",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/23px-Flag_of_the_United_Kingdom.svg.png"
+            }
+        },
+        {
+            "worth": 1500000,
+            "data": {
+                "name": "Taiwan",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/23px-Flag_of_the_Republic_of_China.svg.png"
+            }
+        },
+        {
+            "worth": 1500000,
+            "data": {
+                "name": "Japan",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/23px-Flag_of_Japan.svg.png"
+            }
+        },
+        {
+            "worth": 1400000,
+            "data": {
+                "name": "Spain",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+            }
+        },
+        {
+            "worth": 1400000,
+            "data": {
+                "name": "Italy",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+            }
+        },
+        {
+            "worth": 1300000,
+            "data": {
+                "name": "UAE",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/23px-Flag_of_the_United_Arab_Emirates.svg.png"
+            }
+        },
+        {
+            "worth": 1200000,
+            "data": {
+                "name": "South Korea",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/23px-Flag_of_South_Korea.svg.png"
+            }
+        },
+        {
+            "worth": 850000,
+            "data": {
+                "name": "China",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/23px-Flag_of_the_People%27s_Republic_of_China.svg.png"
+            }
+        },
+        {
+            "worth": 540000,
+            "data": {
+                "name": "Malaysia",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/23px-Flag_of_Malaysia.svg.png"
+            }
+        },
+        {
+            "worth": 400000,
+            "data": {
+                "name": "Russia",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/23px-Flag_of_Russia.svg.png"
+            }
+        },
+        {
+            "worth": 360000,
+            "data": {
+                "name": "Argentina",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
+            }
+        },
+        {
+            "worth": 300000,
+            "data": {
+                "name": "Romania",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/23px-Flag_of_Romania.svg.png"
+            }
+        },
+        {
+            "worth": 280000,
+            "data": {
+                "name": "Brazil",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
+            }
+        },
+        {
+            "worth": 180000,
+            "data": {
+                "name": "South Africa",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/23px-Flag_of_South_Africa.svg.png"
+            }
+        },
+        {
+            "worth": 160000,
+            "data": {
+                "name": "Vietnam",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/23px-Flag_of_Vietnam.svg.png"
+            }
+        },
+        {
+            "worth": 70000,
+            "data": {
+                "name": "Nigeria",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"
+            }
+        },
+        {
+            "worth": 60000,
+            "data": {
+                "name": "India",
+                "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/23px-Flag_of_India.svg.png"
+            }
+        },
+        {
+            "worth": 60000,
+            "data": {
+                "name": "Philippines",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/23px-Flag_of_the_Philippines.svg.png"
+            }
+        },
+        {
+            "worth": 60000,
+            "data": {
+                "name": "Indonesia",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/23px-Flag_of_Indonesia.svg.png"
+            }
+        },
+        {
+            "worth": 20000,
+            "data": {
+                "name": "Kenya",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/23px-Flag_of_Kenya.svg.png"
+            }
+        }
+    ],
+    "date": "27 May, 2021"
+}
