@@ -35,10 +35,12 @@ export class PresidentialCandidatesService
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
-
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 
+  public setupSEOTags() {
+    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.presidentialCandidates}`);
+  }
   protected matches(tableData: Worth<PresidentialCandidates>, term: string, pipe: PipeTransform): boolean {
     return (tableData.data as Wealthy).name.toLowerCase().includes(term.toLowerCase());
   }

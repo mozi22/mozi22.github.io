@@ -33,8 +33,10 @@ export class NbaService extends TableService<Nba> implements IService<Nba> {
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
-
+  }
+  public setupSEOTags() {
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.nba}`);
   }
 
   protected matches(tableData: Worth<Wealthy>, term: string, pipe: PipeTransform): boolean {

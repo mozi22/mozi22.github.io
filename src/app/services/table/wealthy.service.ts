@@ -32,8 +32,10 @@ export class WealthyService extends TableService<Wealthy> implements IService<We
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
-
+  }
+  public setupSEOTags() {
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.wealthy}`);
   }
 
   protected matches(tableData: Worth<Wealthy>, term: string, pipe: PipeTransform): boolean {

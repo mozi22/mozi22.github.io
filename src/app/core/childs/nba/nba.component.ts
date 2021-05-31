@@ -15,5 +15,7 @@ export class NbaComponent implements OnInit {
 
   constructor(public helperService: HelperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.setupSEOTags();
+  }
 }

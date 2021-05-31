@@ -35,7 +35,10 @@ export class CryptoService extends TableService<Crypto> implements IService<Cryp
     });
 
     this._coinService.observeCoinPrices();
+  }
+  public setupSEOTags() {
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.crypto}`);
   }
   public updateCoinPrices(selectedCoin: Coin): void {
     this._latestDataTable = JSON.parse(JSON.stringify(this._originalDataTable));

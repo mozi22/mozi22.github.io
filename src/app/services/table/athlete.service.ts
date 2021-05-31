@@ -28,6 +28,10 @@ export class AthleteService extends TableService<Athlete> implements IService<At
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
+  }
+
+  public setupSEOTags() {
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.athletes}`);
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 

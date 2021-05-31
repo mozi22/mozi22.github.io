@@ -28,11 +28,10 @@ export class GdpService extends TableService<Country> implements IService<Countr
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
-
-  protected matches(tableData: Worth<Country>, term: string, pipe: PipeTransform): boolean {
-    return (tableData.data as Country).name.toLowerCase().includes(term.toLowerCase());
+  public setupSEOTags() {
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.gdp}`);
+    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 
   public updateCoinPrices(selectedCoin: Coin): void {
@@ -66,5 +65,8 @@ export class GdpService extends TableService<Country> implements IService<Countr
 
   public sortColumnValues({ column, direction }: SortEvent) {
     this.onSort({ column, direction });
+  }
+  protected matches(tableData: Worth<Country>, term: string, pipe: PipeTransform): boolean {
+    return (tableData.data as Country).name.toLowerCase().includes(term.toLowerCase());
   }
 }

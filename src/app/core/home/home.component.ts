@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '@env/environment';
+import { SeoService } from '@services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public todayDate: string = new Date().toDateString();
 
-  constructor() {}
+  constructor(private seoService: SeoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.seoService.updateCanonicalUrl(`${environment.base}`);
+    this.seoService.setupSEOTags(
+      environment.SEO.static_pages.home.title,
+      environment.SEO.static_pages.home.description,
+      environment.SEO.static_pages.home.keywords,
+    );
+  }
 }

@@ -6,6 +6,7 @@ import { defaultENV } from './environment.default';
 
 export const environment = {
   production: false,
+  base: 'http://localhost:4200',
   ...defaultENV,
 };
 

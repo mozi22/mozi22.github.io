@@ -8,6 +8,7 @@ export interface IService<T> {
   readonly source: string;
   readonly comments: string[];
   readonly description: string;
+
   // readonly updateDate: string;
 
   dataTable: Observable<Worth<T>[]>;
@@ -18,4 +19,5 @@ export interface IService<T> {
 
   sortColumnValues({ column, direction }: SortEvent): void;
   updateCoinPrices(selectedCoin: Coin): void;
+  setupSEOTags(): void;
 }

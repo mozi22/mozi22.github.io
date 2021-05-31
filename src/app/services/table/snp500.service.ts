@@ -32,7 +32,10 @@ export class Snp500Service extends TableService<Snp500> implements IService<Snp5
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
+  }
+  public setupSEOTags() {
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.snp500}`);
   }
 
   protected matches(tableData: Worth<Snp500>, term: string, pipe: PipeTransform): boolean {

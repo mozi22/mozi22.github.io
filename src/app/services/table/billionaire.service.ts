@@ -28,7 +28,10 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
     this.comments.push(`<b>Last Updated:</b> ${scrappedData.date}`);
 
     this._originalDataTable = this._latestDataTable = scrappedData.data;
+  }
 
+  public setupSEOTags() {
+    this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.billionaires}`);
     this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
   }
 
