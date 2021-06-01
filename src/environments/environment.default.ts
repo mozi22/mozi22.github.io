@@ -47,7 +47,7 @@ export const defaultENV = {
         keywords:
           'cryptocurrencies, bitcoin, ethereum, crypto, s&p500, microsoft, apple, google, facebook, bigtech, companies, marketcap',
         description:
-          'How many crypto do you need to buy to be equivalent to the worth of largest s&p500 companies in the world.',
+          '<p class="graf graf--p" name="22df">The Standard &amp; Poor&rsquo;s 500 (or S&amp;P500) is a weighted index fund comprising of 500 biggest companies in the world. It is considered to be one of the most successful investment funds with an annual return of around 10% (can be more or less) for it&rsquo;s investor.&nbsp;</p><p class="graf graf--p" name="d4a9">During the Berkshire Hathaway annual shareholder&rsquo;s meeting in 2020, Warren Buffet said,</p><blockquote class="blockquote text-center"><p class="mb-0"><em>For most people, the best thing to do is to own the S&P 500 index fund.</em></p></blockquote><p class="graf graf--p" name="15b5">When you invest in S&P 500, your investment is distributed among the included companies which ensures that your portfolio is diversified. Since the fund consists of the most successful companies the investment is likely to go more in an upwards trend. For example if you look at google (GOOG).</p><img class="img-fluid rounded mx-auto d-block my-4" alt="google stock price" src="/assets/images/goog.png" class="image-fluid" /><p>The stock price has always been on the upward trend which makes companies in S&amp;P500 so investor friendly with regards to investments. The combined effect of these companies also have a positive impact on the index fund.</p><p class="graf graf--p" name="b1ef">In case, you were wondering, in the following table we also look at how much these companies are worth in terms of cryptocurrencies.&nbsp;</p>',
       },
       wealthy: {
         cover: '/assets/images/1percent.gif',
@@ -58,15 +58,17 @@ export const defaultENV = {
       },
       crypto: {
         cover: '/assets/images/coins.jpg',
-        title: 'cryptocurrencies vs cryptocurrencies',
+        title: 'How cryptocurrencies stack against each other',
         keywords: 'cryptocurrencies, bitcoin, ethereum, crypto',
-        description: 'How many crypto do you have to own to buy other cryptocurrencies.',
+        description:
+          '<p class="graf graf--p" name="b639">Cryptocurrencies are all the rage. With bitcoin hitting its max price of around $63,000. Some experts believe the coin will be reaching around $500,000 in value in the long term. Since most of the rich investors can still afford to buy bitcoins but not the majority due to very high price. Therefore we look at how the other coins stack against the bitcoin in this post.</p><p class="graf graf--p" name="e6f5">Some major coins to look for include binance coin(BNB) and cardano (ADA). BNB has been on the risesince its launch mostly due to it&rsquo;s high usage within the binance exchange. Since binance is one of the largest exchanges in theworld, trading in the coin is encouraged by the company by giving more incentives like less trading fees and better staking options.The coin is expected to go even in higher in future.</p><p class="graf graf--p" name="9564">Cardano (ADA) can be considered an alternative to Ethereum. The platform is founded by CharlesHoskinson (co-founder of Ethereum) The platform gives possibility to developers to write smart contracts and uses a proof-of-stakeconcensus algorithm unlike Ethereum.&nbsp;</p><p class="graf graf--p" name="826e">To see how many coins you need to own for them to be equal to a single unit of another coin we haveprovided a table below.&nbsp;</p>',
       },
       nba: {
         cover: '/assets/images/nba.jpg',
-        title: 'NBA Stars vs cryptocurrencies',
+        title: 'The highest paid NBA players',
         keywords: 'cryptocurrencies, bitcoin, ethereum, crypto, bryant, curry, basketball, nba, sports, players',
-        description: 'How many crypto do you have to own to be as rich as richest NBA stars.',
+        description:
+          '<p class="graf graf--p" name="b945">NBA is one of the most popular sports played and watched around the world. The game itself generated a total of $7.92 billion in 2019/2020. Higher popularity means higher compensation for the players. As estimated by Forbes, one of the most popular player (LeBron James) of the league will be soon hitting the billion dollar mark in 2021.</p><p class="graf graf--p" name="d6cc">Most of the compensation of players come from brand endorsement contracts and personal businesses. But also a major part of the worth appear from their contracts with the teams. For e.g Lebron James has a salary of around $39.22 million while Stephen Curry is somewhere around $40.23 million.</p><p class="graf graf--p" name="6dbd">The following table compares the salaries of the players in cryptocurrencies.</p>',
       },
       presidentialCandidates: {
         cover: '/assets/images/politicians.jpg',
