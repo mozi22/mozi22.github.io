@@ -13,6 +13,7 @@ export class TitleHeaderComponent implements OnInit, OnChanges {
   @Input() public coinData!: Coin;
   @Input() public title: string = '';
   @Input() public description: string = '';
+  @Input() public cover: string = '';
 
   @Output() selectedCoin = new EventEmitter<number>();
 

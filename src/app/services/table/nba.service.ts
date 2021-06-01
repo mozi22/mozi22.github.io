@@ -20,6 +20,7 @@ export class NbaService extends TableService<Nba> implements IService<Nba> {
   readonly _TITLE: string = environment.SEO.static_pages.nba.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.nba.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.nba.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.nba.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Curry';
   readonly source =
@@ -55,6 +56,9 @@ export class NbaService extends TableService<Nba> implements IService<Nba> {
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

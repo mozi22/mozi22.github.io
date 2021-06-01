@@ -20,6 +20,7 @@ export class HouseService extends TableService<House> implements IService<House>
   readonly _TITLE: string = environment.SEO.static_pages.houses.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.houses.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.houses.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.houses.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Palm';
   readonly source = 'https://www.beautifullife.info/urban-design/15-of-the-most-expensive-houses-in-the-world/';
@@ -54,6 +55,9 @@ export class HouseService extends TableService<House> implements IService<House>
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

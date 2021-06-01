@@ -22,6 +22,7 @@ export class PresidentialCandidatesService
   readonly _TITLE: string = environment.SEO.static_pages.presidentialCandidates.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.presidentialCandidates.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.presidentialCandidates.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.presidentialCandidates.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Trump';
   readonly source =
@@ -57,6 +58,9 @@ export class PresidentialCandidatesService
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

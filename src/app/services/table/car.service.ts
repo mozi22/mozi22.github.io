@@ -19,6 +19,7 @@ export class CarService extends TableService<Car> implements IService<Car> {
   readonly _TITLE: string = environment.SEO.static_pages.cars.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.cars.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.cars.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.cars.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Audi';
   readonly source = 'https://fastestlaps.com/lists/top-most-expensive-cars';
@@ -52,6 +53,9 @@ export class CarService extends TableService<Car> implements IService<Car> {
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

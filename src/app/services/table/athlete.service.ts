@@ -16,6 +16,7 @@ export class AthleteService extends TableService<Athlete> implements IService<At
   readonly _TITLE: string = environment.SEO.static_pages.athletes.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.athletes.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.athletes.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.athletes.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Neymar';
   readonly source = 'https://www.forbes.com/athletes/list';
@@ -51,6 +52,9 @@ export class AthleteService extends TableService<Athlete> implements IService<At
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

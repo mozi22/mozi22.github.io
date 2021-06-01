@@ -8,6 +8,7 @@ export interface IService<T> {
   readonly source: string;
   readonly comments: string[];
   readonly description: string;
+  readonly cover: string;
 
   // readonly updateDate: string;
 

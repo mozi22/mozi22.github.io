@@ -16,6 +16,7 @@ export class GdpService extends TableService<Country> implements IService<Countr
   readonly _TITLE: string = environment.SEO.static_pages.gdp.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.gdp.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.gdp.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.gdp.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Germany';
   readonly source = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)';
@@ -46,6 +47,9 @@ export class GdpService extends TableService<Country> implements IService<Countr
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

@@ -20,6 +20,7 @@ export class Snp500Service extends TableService<Snp500> implements IService<Snp5
   readonly _TITLE: string = environment.SEO.static_pages.snp500.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.snp500.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.snp500.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.snp500.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Google';
   readonly source = 'https://fknol.com/list/market-cap-sp-500-index-companies.php';
@@ -54,6 +55,9 @@ export class Snp500Service extends TableService<Snp500> implements IService<Snp5
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

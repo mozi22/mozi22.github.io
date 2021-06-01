@@ -20,6 +20,7 @@ export class CryptoService extends TableService<Crypto> implements IService<Cryp
   readonly _TITLE: string = environment.SEO.static_pages.crypto.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.crypto.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.crypto.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.crypto.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Bitcoin';
   readonly source = 'http://coingecko.com/';
@@ -52,6 +53,9 @@ export class CryptoService extends TableService<Crypto> implements IService<Cryp
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

@@ -16,6 +16,7 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
   readonly _TITLE: string = environment.SEO.static_pages.billionaires.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.billionaires.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.billionaires.keywords;
+  readonly _COVER: string = environment.SEO.static_pages.billionaires.cover;
 
   readonly _PLACEHOLDER = 'Search... e.g Bill';
   readonly source = 'https://forbes400.herokuapp.com/api/forbes400';
@@ -50,6 +51,9 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
 
   public get title(): string {
     return this._TITLE;
+  }
+  public get cover(): string {
+    return this._COVER;
   }
 
   public get description(): string {

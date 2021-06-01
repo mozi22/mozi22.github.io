@@ -1,6 +1,7 @@
 <div class="container mt-5">
-    <h1 class="font-weight-bold display-4">{{ title }}</h1>
-    <div class="lead my-3 text-secondary" style="line-height: 45px" [innerHTML]="description"></div>
+    <h1 class="font-weight-bold display-4 my-4">{{ title }}</h1>
+    <img [src]="cover" *ngIf="cover" class="img-fluid rounded mx-auto d-block" />
+    <div class="lead my-4 text-secondary" style="line-height: 45px" [innerHTML]="description"></div>
     <div class="row">
         <div class="col">
             <div class="peer" *ngIf="coinData">
