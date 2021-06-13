@@ -19,8 +19,10 @@ import { TableService } from './table.service';
 export class HouseService extends TableService<House> implements IService<House> {
   readonly _TITLE: string = environment.SEO.static_pages.houses.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.houses.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.houses.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.houses.keywords;
   readonly _COVER: string = environment.SEO.static_pages.houses.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Palm';
   readonly source = 'https://www.beautifullife.info/urban-design/15-of-the-most-expensive-houses-in-the-world/';
@@ -35,7 +37,7 @@ export class HouseService extends TableService<House> implements IService<House>
     this._originalDataTable = this._latestDataTable = scrappedData.data;
   }
   public setupSEOTags() {
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.houses}`);
   }
 
@@ -58,6 +60,9 @@ export class HouseService extends TableService<House> implements IService<House>
   }
   public get cover(): string {
     return this._COVER;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get description(): string {

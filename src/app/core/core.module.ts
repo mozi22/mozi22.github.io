@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '@shared/shared.module';
 import { AthleteComponent } from './childs/athlete/athlete.component';
 import { BillionairesComponent } from './childs/billionaires/billionaires.component';
+import { BtcpprComponent } from './childs/btcppr/btcppr.component';
 import { CarComponent } from './childs/car/car.component';
 import { CountryComponent } from './childs/country/country.component';
 import { CryptoComponent } from './childs/crypto/crypto.component';
@@ -31,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     NbaComponent,
     PresidentialCandidatesComponent,
     HomeComponent,
+    BtcpprComponent,
   ],
   imports: [CommonModule, SharedModule, NgbModule],
   providers: [DecimalPipe],

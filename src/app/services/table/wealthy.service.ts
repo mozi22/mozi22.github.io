@@ -18,8 +18,10 @@ import { TableService } from './table.service';
 export class WealthyService extends TableService<Wealthy> implements IService<Wealthy> {
   readonly _TITLE: string = environment.SEO.static_pages.wealthy.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.wealthy.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.wealthy.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.wealthy.keywords;
   readonly _COVER: string = environment.SEO.static_pages.wealthy.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g China';
   readonly source =
@@ -35,7 +37,7 @@ export class WealthyService extends TableService<Wealthy> implements IService<We
     this._originalDataTable = this._latestDataTable = scrappedData.data;
   }
   public setupSEOTags() {
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.wealthy}`);
   }
 
@@ -66,6 +68,9 @@ export class WealthyService extends TableService<Wealthy> implements IService<We
 
   public get dataTable(): Observable<Worth<Wealthy>[]> {
     return this._table$.asObservable();
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get loading(): Observable<boolean> {

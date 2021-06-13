@@ -15,8 +15,10 @@ import { TableService } from './table.service';
 export class GdpService extends TableService<Country> implements IService<Country> {
   readonly _TITLE: string = environment.SEO.static_pages.gdp.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.gdp.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.gdp.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.gdp.keywords;
   readonly _COVER: string = environment.SEO.static_pages.gdp.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Germany';
   readonly source = 'https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)';
@@ -32,7 +34,7 @@ export class GdpService extends TableService<Country> implements IService<Countr
   }
   public setupSEOTags() {
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.gdp}`);
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
   }
 
   public updateCoinPrices(selectedCoin: Coin): void {
@@ -58,6 +60,9 @@ export class GdpService extends TableService<Country> implements IService<Countr
 
   public get dataTable(): Observable<Worth<Country>[]> {
     return this._table$.asObservable();
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get loading(): Observable<boolean> {

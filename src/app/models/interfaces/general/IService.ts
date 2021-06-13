@@ -8,7 +8,9 @@ export interface IService<T> {
   readonly source: string;
   readonly comments: string[];
   readonly description: string;
+  readonly shortDescription: string;
   readonly cover: string;
+  readonly _DYNAMIC_FEATURE: boolean;
 
   // readonly updateDate: string;
 

@@ -1,10 +1,10 @@
 <app-header></app-header>
-<app-title-header [title]="dataService.title" [cover]="dataService.cover" [description]="dataService.description" [coinData]="selectedCoin" (selectedCoin)="changeSelectedCoin($event)"></app-title-header>
+<app-title-header [featureEnabled]="dataService?._DYNAMIC_FEATURE" [title]="dataService.title" [cover]="dataService.cover" [description]="dataService.description" [coinData]="selectedCoin" (selectedCoin)="changeSelectedCoin($event)"></app-title-header>
 
 <div class="container">
     <div class="row row-cols-1">
         <div class="col">
-            <form class="mt-4">
+            <form class="mt-4" *ngIf="dataService?._DYNAMIC_FEATURE">
                 <div class="form-group form-inline">
                     <input class="form-control ml-2" [placeholder]="dataService?.placeholder" style="width: 100%" type="text" name="searchTerm" [(ngModel)]="dataService.searchTerm" />
                     <span class="ml-3" *ngIf="dataService?.loading | async">Loading...</span>
@@ -22,6 +22,7 @@
             <app-wealthy *ngSwitchCase="availableRoutes[7]" [dataService]="narrow(dataService, 'wealthy')" [coinData]="selectedCoin"></app-wealthy>
             <app-nba *ngSwitchCase="availableRoutes[8]" [dataService]="narrow(dataService, 'nba')" [coinData]="selectedCoin"></app-nba>
             <app-presidential-candidates *ngSwitchCase="availableRoutes[9]" [dataService]="narrow(dataService, 'presidentialCandidates')" [coinData]="selectedCoin"></app-presidential-candidates>
+            <app-btcppr *ngSwitchCase="availableRoutes[10]" [dataService]="narrow(dataService, 'btcppr')"></app-btcppr>
         </div>
     </div>
 </div>

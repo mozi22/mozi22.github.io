@@ -19,8 +19,10 @@ import { TableService } from './table.service';
 export class NbaService extends TableService<Nba> implements IService<Nba> {
   readonly _TITLE: string = environment.SEO.static_pages.nba.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.nba.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.nba.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.nba.keywords;
   readonly _COVER: string = environment.SEO.static_pages.nba.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Curry';
   readonly source =
@@ -36,7 +38,7 @@ export class NbaService extends TableService<Nba> implements IService<Nba> {
     this._originalDataTable = this._latestDataTable = scrappedData.data;
   }
   public setupSEOTags() {
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.nba}`);
   }
 
@@ -74,6 +76,9 @@ export class NbaService extends TableService<Nba> implements IService<Nba> {
   }
   public get placeholder(): string {
     return this._PLACEHOLDER;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public sortColumnValues({ column, direction }: SortEvent) {

@@ -19,8 +19,10 @@ import { TableService } from './table.service';
 export class Snp500Service extends TableService<Snp500> implements IService<Snp500> {
   readonly _TITLE: string = environment.SEO.static_pages.snp500.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.snp500.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.snp500.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.snp500.keywords;
   readonly _COVER: string = environment.SEO.static_pages.snp500.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Google';
   readonly source = 'https://fknol.com/list/market-cap-sp-500-index-companies.php';
@@ -35,7 +37,7 @@ export class Snp500Service extends TableService<Snp500> implements IService<Snp5
     this._originalDataTable = this._latestDataTable = scrappedData.data;
   }
   public setupSEOTags() {
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.snp500}`);
   }
 
@@ -62,6 +64,9 @@ export class Snp500Service extends TableService<Snp500> implements IService<Snp5
 
   public get description(): string {
     return this._DESCRIPTION;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get dataTable(): Observable<Worth<Snp500>[]> {

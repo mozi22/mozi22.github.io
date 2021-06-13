@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import millify from 'millify';
+import { millify } from 'millify';
 
 @Injectable({
   providedIn: 'root',

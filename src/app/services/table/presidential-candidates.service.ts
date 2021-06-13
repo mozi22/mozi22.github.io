@@ -18,11 +18,14 @@ import { TableService } from './table.service';
 })
 export class PresidentialCandidatesService
   extends TableService<PresidentialCandidates>
-  implements IService<PresidentialCandidates> {
+  implements IService<PresidentialCandidates>
+{
   readonly _TITLE: string = environment.SEO.static_pages.presidentialCandidates.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.presidentialCandidates.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.presidentialCandidates.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.presidentialCandidates.keywords;
   readonly _COVER: string = environment.SEO.static_pages.presidentialCandidates.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Trump';
   readonly source =
@@ -39,7 +42,7 @@ export class PresidentialCandidatesService
   }
 
   public setupSEOTags() {
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.presidentialCandidates}`);
   }
   protected matches(tableData: Worth<PresidentialCandidates>, term: string, pipe: PipeTransform): boolean {
@@ -61,6 +64,9 @@ export class PresidentialCandidatesService
   }
   public get cover(): string {
     return this._COVER;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get description(): string {

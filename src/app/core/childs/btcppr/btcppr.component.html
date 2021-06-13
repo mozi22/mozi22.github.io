@@ -1,0 +1,406 @@
+<p class="lead my-4 text-secondary custom-line-height">
+    The following is a guide for understanding the paper written by the unknown Bitcoin founder Satoshi Nakamoto. The post will breakdown different parts of the research paper and explain in further detail the highlights of the paper. It's more targeted for
+    less technical individuals who would like to have a better understanding of the system Satoshi proposed. Similar structure as in the research paper is followed for the post.
+</p>
+<h3 class="font-weight-bold">Introduction</h3>
+<p class="lead my-4 text-secondary custom-line-height">
+    In our everyday lives we are transferring money online, be it a wire transfer to our friends or family or swiping our credit card in a store. All these transactions go through a single trusted institution usually a bank. Here's how your current payment
+    in a shop with a credit card will be processed.
+</p>
+<div class="d-flex justify-content-center">
+    <figure class="figure">
+        <img src="/assets/images/posts/btcppr/1.jpg" class="figure-img img-fluid rounded" alt="steps behind the scene when transaction takes place anywhere" />
+        <figcaption class="figure-caption d-flex justify-content-center">
+            Source:&nbsp; <a href="https://jtech.digital/payment-processing" target="_blank"> jTech Digital</a>
+        </figcaption>
+    </figure>
+</div>
+<p class="lead my-4 text-secondary custom-line-height">
+    In step 3, the funds are verified by the credit institute (or a bank ) to check for double-spending (i.e do not spend the money that's been already spent).
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+    Moreover, financial institutions prefer to have an option to undo transactions, the reason for which is dispute mediation. Dispute mediation is the process where a transaction could be undone (or partially undone) based on the solution that the involved
+    parties came up with. An example would be, an investment firm managing millions in asset for a financially less literate client and couldn't deliver the results or the client disregarding the terms he signed up for in past [1]. Dispute mediation is
+    a costly process in terms of time and money that also impacts the initial transaction costs. Having the possibility of undoing costs also encourages trust among the parties, but the process comes with its own unnecessary complications with merchants
+    requiring further verification info (to avoid fraud) from the customers that they might not even require. All these issues make the task of moving money around very complex.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+    The solution to this problem is a more sophisticated system that enables the merchant and customer to make non reversible transactions without a middle man [3], removing extra verification complexities and double spending. The system is able to keep track
+    of all transactions from the advent till the end.
+</p>
+<h3 class="font-weight-bold">Transactions</h3>
+<p class="lead my-4 text-secondary custom-line-height">
+    The goal has always been to build systems through which money can be safely moved around avoiding double spending. Current systems solve this problem by introducing a central authority (or mint) that releases the coins to the receiving party after validating
+    the initiated transactions from the sender.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+    For blockchains, the central authority is replaced by all the participants in the network i.e everyone will keep track of the transactions (hence everyone is part of the central authority). Keeping a copy of valid transactions among all the participants
+    helps in avoiding double spending.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+    More technically, the system uses "asymmetric encryption" , i.e a combination of public and private keys for securely verifying and sending transactions.
+</p>
+<h5 class="font-weight-bold">Asymmetric encryption</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+    Asymmetric encryption is a secure way to share data over the internet. The communication takes place by the involved parties by generating a private and public key. Imagine two users A & B. UserA sends his public key (derived from private key) to UserB.
+    Now UserB can encrypt messages using the public key that can only be decrypted by UserA (since UserA has the private key for the corresponding public key) [5].
+</p>
+<h5 class="font-weight-bold">How blockchain uses Asymmetric encryption</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+    Consider the diagram below. A transaction is made by UserB (by signing it with his private key - Signature B) towards UserD (where To: - Public Key D). In blockchain, the transaction itself is a proof of the amount of bitcoins an address(public key hash)
+    owns.
+</p>
+<div class="d-flex justify-content-center">
+    <figure class="figure">
+        <img src="/assets/images/posts/btcppr/2.png" class="figure-img img-fluid rounded" alt="how bitcoin transactions take place" />
+        <figcaption class="figure-caption d-flex justify-content-center">
+            Source:&nbsp;
+            <a href="https://arstechnica.com/tech-policy/2020/12/how-bitcoin-works/#:~:text=A%20bitcoin%20transaction%20contains%20a,curve%20cryptography%20for%20digital%20signatures" target="_blank">
+        arstechnica.com</a
+      >
+    </figcaption>
+  </figure>
+</div>
+
+<p class="lead my-4 text-secondary custom-line-height">
+  This means, if UserD had one more coin sent to him by a User let's say UserP, than there would be an another
+  transaction as above. The list of transactions pointing to the public key of UserD will amount to the total amount in
+  his UserD's wallet.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+  When UserD wants to spend his bitcoin i.e send btc to someone else. This can be easily recorded by specifying
+  Transaction 3, output 1 (output are zero-indexed) as the source of the funds and signing the transaction with UserD's
+  private key as shown in Transaction 4. Note the transaction has 2 outputs equivalent to the total amount of bitcoins
+  UserD owns. One of those outputs is pointing back to UserD itself. This is because the blockchain only store the
+  amount of btc owned by someone in terms of transactions.
+</p>
+<h3 class="font-weight-bold">Timestamp Server</h3>
+<p class="lead my-4 text-secondary custom-line-height">
+  Each block on the blockchain is pointing to the hash of previous block. This is done by creating a hash of the
+  complete block also called block header.
+</p>
+<div class="d-flex justify-content-center">
+  <figure class="figure">
+    <img
+      src="/assets/images/posts/btcppr/3.png"
+      class="figure-img img-fluid rounded"
+      alt="how bitcoin transactions are timestamped using block hashes"
+    />
+    <figcaption class="figure-caption d-flex justify-content-center">
+      Source:&nbsp;
+      <a href="https://bitcoin.org/bitcoin.pdf" target="_blank"> Bitcoin Paper</a>
+        </figcaption>
+    </figure>
+</div>
+<p class="lead my-4 text-secondary custom-line-height">
+    The block header is a minified version of the data representing the block that exists in the chain (or created at a particular time). A block header is a combination of three things.
+</p>
+<ol class="lead my-4 text-secondary custom-line-height">
+    <li>
+        service string
+        <ol>
+            <li>version field</li>
+            <li>the hash of the previous block</li>
+            <li>the root hash of the merkle tree</li>
+        </ol>
+    </li>
+    <li>nonce.</li>
+    <li>counter.</li>
+</ol>
+<h5 class="font-weight-bold">Service String</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+    The service string is a combination of a version field, the hash of the previous block, the root hash of the merkle tree of all transactions in the block, the current time, and the difficulty[6]. The merkle tree is a tree created by converting the transactions
+    of the block into hashes and than combining those hashes pairwise into further hashes until the merkle root node is reached.
+</p>
+<div class="d-flex justify-content-center">
+    <figure class="figure">
+        <img src="/assets/images/posts/btcppr/4.png" class="figure-img img-fluid rounded" alt="what is contained inside a bitcoin blockchain block" />
+        <figcaption class="figure-caption d-flex justify-content-center">
+            Source:&nbsp;
+            <a href="https://www.tutorialspoint.com/what-is-a-nonce-in-block-chain" target="_blank">
+        https://www.tutorialspoint.com/what-is-a-nonce-in-block-chain</a
+      >
+    </figcaption>
+  </figure>
+</div>
+<hr />
+<div class="d-flex justify-content-center">
+  <figure class="figure" style="text-align: center">
+    <img
+      src="/assets/images/posts/btcppr/5.png"
+      class="figure-img img-fluid rounded"
+      alt="how merkle tree for blockchain looks like"
+    />
+    <figcaption class="figure-caption d-flex justify-content-center">
+      Merkle tree with merkle root representing the hash of all the transactions TA to TH considered within the block
+    </figcaption>
+  </figure>
+</div>
+<p class="lead my-4 text-secondary custom-line-height">
+  Time is represented as the current system timestamp while Bits are used to control the difficulty for mining. This is
+  done through specifying the number leading zeros required to find the right hash, more on this later.
+</p>
+<h5 class="font-weight-bold">Nonce</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+  The nonce is a random number the miners have to check in order to find the hash with the correct number of trailing
+  zeros. This process is also called Proof-of-work.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+  The <a href="https://www.blockchain.com/charts/difficulty">difficulty level</a> is adjusted every 2 weeks or 2016 blocks to ensure a time of 10 minutes separates each block addition into the chain. This is set dynamically by the algorithm
+            based on the mining power available to the block chain.
+            </p>
+
+            <h3 class="font-weight-bold">Proof of Work</h3>
+            <p class="lead my-4 text-secondary custom-line-height">
+                Proof of work(PoW) is the heart of blockchain to avoid a central authority. PoW is also responsible for controlling the supply of the coins overtime.
+            </p>
+            <p class="lead my-4 text-secondary custom-line-height">
+                In order to maintain a peer to peer system the PoW encourages nodes on the network to act as miners. The job of a miner node is to use a trial and error approach to find a hash value. The service string and counter of the block will remain the same, but
+                a miner would have to try incrementing nonce values and pass it through sha-256 hash function to find a hash with n leading zeros, where n determines the mining difficulty.
+            </p>
+            <p class="lead my-4 text-secondary custom-line-height">
+                The mining difficulty refers to how hard should the system make for the miners to find a hash. This difficulty is calculated by the blockchain every two weeks. It is set by the blockchain based on the available mining power in the system i.e more power
+                means harder problem and less power means less harder problem.The following
+                <a href="https://bitcoin.stackexchange.com/questions/85896/mining-difficulty-and-leading-zeros">thread</a> can help further in understanding how mining difficulty is calculated.
+            </p>
+            <div class="d-flex justify-content-center">
+                <figure class="figure">
+                    <img src="/assets/images/posts/btcppr/6.png" class="figure-img img-fluid rounded" alt="how blocks are added in proof of work" />
+                    <figcaption class="figure-caption d-flex justify-content-center">
+                        Source:&nbsp;
+                        <a href="https://bitcoin.org/bitcoin.pdf" target="_blank"> Bitcoin Paper</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="lead my-4 text-secondary custom-line-height">
+                The process of mining is resource intensive and time consuming therefore if someone tries to change a hash from an old block of the blockchain, they'd have to redo all the hashes of the following blocks. This is because a single character change in the
+                hash function changes the complete hash and since the previous blocks hash is also part of the new block's hash, this will cause a chain effect which translates to a lot of computing power and time.
+            </p>
+            <p class="lead my-4 text-secondary custom-line-height">
+                PoW also determines the representation of majority decision making, this is done through giving the power of vote to individual CPUs. The more CPU power a computer has the more blocks it will write on the blockchain. This will result in the exponential
+                growth of the power requirements to write a block on the blockchain. Therefore, if a majority of CPU power is controlled by the "nice guys", it becomes almost impossible to write a forged block.
+            </p>
+            <h5 class="font-weight-bold">51% attack</h5>
+            <p class="lead my-4 text-secondary custom-line-height">
+                A 51% attack is one way to successfully forge a block on the blockchain but this would require a lot of power (and money) to achieve. The attack can be achieved by owning greater than or equal to 51% mining power on the blockchain network.
+            </p>
+            <p class="lead my-4 text-secondary custom-line-height">
+                In order to understand how the 51% attack can function. A technical detail has to be considered i.e what happens in case two miners are able to find the answer to solve the math problem (finding the correct hash by changing nonce ) at the same time. This
+                is more likely to happen in which case both the blocks are appended to the blockchain but as time progress and more blocks are appended, one of the chains will move on faster than the other which will eventually be considered the real
+                blockchain and the other chain will be discarded.
+            </p>
+            <p class="lead my-4 text-secondary custom-line-height">
+                In case for the attacker to successfully have control of the 51% attack, they would have to keep adding blocks faster than all the other people on the network eventually taking control of the blockchain.
+            </p>
+            <div class="d-flex justify-content-center">
+                <figure class="figure">
+                    <img src="/assets/images/posts/btcppr/7.jpeg" class="figure-img img-fluid rounded" alt="the 51% attack in blockchain" />
+                    <figcaption class="figure-caption d-flex justify-content-center">
+                        Source:&nbsp;
+                        <a href="https://www.bitpanda.com/academy/en/lessons/what-is-a-51-attack-and-how-is-it-prevented/" target="_blank">
+        https://www.bitpanda.com/academy/en/lessons/what-is-a-51-attack-and-how-is-it-prevented/</a
+      >
+    </figcaption>
+  </figure>
+</div>
+<h3 class="font-weight-bold">Network</h3>
+<p class="lead my-4 text-secondary custom-line-height">
+  From the paper. Blockchain uses the following steps to run the network.
+</p>
+<ol class="lead my-4 text-secondary custom-line-height">
+  <li>New transactions are broadcast to all nodes.</li>
+  <li>Each node collects new transactions into a block.</li>
+  <li>Each node works on finding a difficult proof-of-work for its block.</li>
+  <li>When a node finds a proof-of-work, it broadcasts the block to all nodes.</li>
+  <li>Nodes accept the block only if all transactions in it are valid and not already spent.</li>
+  <li>
+    Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of
+    the accepted block as the previous hash.
+  </li>
+</ol>
+<p class="lead my-4 text-secondary custom-line-height">
+  All the bitcoin transactions are waiting inside a mempool (a memory pool) from where they are verified and processed.
+  Once the transaction is taken off of the mempool and verified, its collected inside a block with other verified
+  transactions. Than each node works to solve the math problem to write the block. The node that solves the problem
+  broadcasts all the nodes about the block and the nodes can accept or reject the block based on some predefined network
+  rules. After acceptance nodes start working on the next block with the newly generated block hash.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+  The nodes in the network are message drop tolerant i.e when a block information is not received by a node, it will
+  come to know about it after the next block has been mined, if such situation occurs the node will update both the
+  previous missed node and the new node.
+</p>
+<h3 class="font-weight-bold">Incentive</h3>
+
+<p class="lead my-4 text-secondary custom-line-height">
+  In order for the miners to do the hard work of solving the math problem (using their time and electricity) they need
+  to be incentivized. There are two methods for the miners to be incentivized.
+</p>
+<h5 class="font-weight-bold">Transaction Fee</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+  There is a second method for incentivizing the miners i.e via transaction fee since all transactions on the blockchain
+  have an additional transaction fee. The more transaction fee a transaction has the more likely it is to be processed
+  earlier since all miners are trying to maximize their rewards. The fee does not depend on the amount you're sending,
+  it does depend on network conditions at the time and the data size of your transaction.
+</p>
+<h5 class="font-weight-bold">Mining Reward</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+  Mining reward is given by the system by adding an extra transaction on top of the mined block. In order to calculate
+  the reward for adding a block on the blockchain, the concept of halving needs to be understood.
+</p>
+<h5 class="font-weight-bold">Halving</h5>
+
+<p class="lead my-4 text-secondary custom-line-height">
+  Bitcoin has a limited overall supply of 21 million and it's circulating supply is 18,660,000 (as of 20 March 2021).
+  When bitcoin was launched, miners were rewarded 50 btc on adding a block to the blockchain. This reward is halved
+  after 210,000 blocks are added (roughly four years). Which means the reward was reduced to 25 btc after first halving,
+  12.5 btc after that, 6.25 btc after (this is the current reward). This will continue until the overall supply is equal
+  to the circulating supply which is expected to be done by the year 2140, after which only transaction fee will be the
+  motivation for the miners to continue mining.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+  Yes the greedy attackers will try to take over the blockchain with 51% attacks for such rewards.
+</p>
+<h3 class="font-weight-bold">Reclaiming Disk Space</h3>
+
+<p class="lead my-4 text-secondary custom-line-height">
+  The co-founder of Intel, Gordon E. Moore mentioned in one of his papers in 1965 that the number of transistors on
+  integrated circuits will be doubled approximately every two years and the law hold to date for CPU and memory
+  performance [8]. This is exactly what Satoshi references in his paper too since the amount of capacity needed by the
+  nodes to run the blockchain is slower than the annual growth of capacity for computers annually.
+</p>
+<p class="lead my-4 text-secondary custom-line-height">
+  In the paper, he suggests that a block with only a header and zero transactions will be equivalent to 80 bytes and one
+  block takes around 10 minutes to be created. Therefore the formula for the amount of storage needed for a whole year
+  is 80 bytes * 6 * 24 * 365 = 4.2 MB per year and in 2008 computer systems were selling with 2 GB of RAM. This can
+  ensure that the growth in hardware technology will always be faster than the amount of space needed.
+</p>
+<h3 class="font-weight-bold">Simplified Payment Verification (SPV)</h3>
+<p class="lead my-4 text-secondary custom-line-height">
+  There are two types of nodes (computers on the network), full-nodes and light-nodes.
+</p>
+<h5 class="font-weight-bold">Full Nodes</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+  Full nodes consist of the complete history of blockchain from the genesis block (first ever block). These nodes
+  consist of all the data including transaction records of every block from the blockchain. There main tasks include
+  verification of transactions and maintaining concensus between other nodes. When making decisions for the future of a
+  network, full nodes are the ones that vote on proposals. If more than 51% of them don't agree with the proposition, it
+  gets skipped. Full nodes require more storage space due it keeping track of all the data in the blockchain.
+</p>
+<h5 class="font-weight-bold">Light Nodes (SPV)</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+  Unlike full nodes, light nodes are wallets which only keep the headers of the blocks. This reduces the size of the
+  chain but also increases the dependency of light nodes on full nodes to gain full information of transactions.
+  Sometimes wallet needs specific information regarding a particular transaction for which the light node can make the
+  call to the full node with the correct block header to get more details about a transaction. The validity of the block
+  in question can be seen by the light node if that block is further connected to more blocks in the full node.
+</p>
+<h5 class="font-weight-bold">Combining and splitting value</h5>
+<p class="lead my-4 text-secondary custom-line-height">
+  Making a separate transaction for every cent will not be the most optimal way for the system to work. Therefore an
+  input output strategy is used. As described in one of the stackoverflow threads [9].
+</p>
+<p class="lead my-4 text-secondary custom-line-height font-italic">
+  There is no such thing as an accounts "balance". It only exists implicitly.
+</p>
+<p class="lead my-4 text-secondary custom-line-height font-italic">
+  When people make transactions, they actually create outputs for a certain amount of bitcoins. Using a special script
+  language, the person making the transaction can specify the requirement for spending that output. There's a whole
+  range of options you have to specify.
+</p>
+<p class="lead my-4 text-secondary custom-line-height font-italic">
+  The most common output script is something that holds the following condition "to spend this transaction, the spender
+  must sign this hash with the private key from this address". So this basically means that the owner of that address
+  can spend it.
+</p>
+<div class="d-flex justify-content-center">
+  <figure class="figure">
+    <img
+      src="/assets/images/posts/btcppr/8.png"
+      class="figure-img img-fluid rounded"
+      alt="how transactions are recorded on the blockchain"
+    />
+    <figcaption class="figure-caption d-flex justify-content-center">
+      Source:&nbsp;
+      <a href="https://bitcoin.org/bitcoin.pdf" target="_blank"> Bitcoin Paper</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <h3 class="font-weight-bold">Privacy</h3>
+            <p class="lead my-4 text-secondary custom-line-height">
+                Traditional payment methods are successful in some way to maintain privacy of the parties involved in the transaction which gets a difficult to maintain in case of public blockchains where all transactions are available for people to see. But certain
+                level of privacy can be maintained by ensuring the public keys of accounts are not related to individuals which gives blockchain to reveal enough information but also not compromise individual privacy. This is somewhat like stock exchanges
+                where the time and size of individual trades, is made public without mentioning the parties.
+            </p>
+            <div class="d-flex justify-content-center">
+                <figure class="figure">
+                    <img src="/assets/images/posts/btcppr/9.png" class="figure-img img-fluid rounded" alt="how privacy can be maintained on the blockchain" />
+                    <figcaption class="figure-caption d-flex justify-content-center">
+                        Source:&nbsp;
+                        <a href="https://bitcoin.org/bitcoin.pdf" target="_blank"> Bitcoin Paper</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="lead my-4 text-secondary custom-line-height">
+                Additional method may include introducing new addresses for every transaction which could make almost impossible to connect the address with the individual [10].
+            </p>
+            <p class="lead my-4 text-secondary custom-line-height">
+                For the sake of simplicity we're not going to explain the Calculations part of the paper. The role of the part is to give a mathematical explanation of the things discussed so far. This post should give you enough help in understanding the calculations
+                yourself.
+            </p>
+            <h3 class="font-weight-bold">Conclusion</h3>
+            <p class="lead my-4 text-secondary custom-line-height">
+                An electronic payment system was introduced without the need of a central authority. The system will keep a complete history of the transactions and avoid double spending with the help of peer-to-peer network using a proof-of-work method. There are less
+                changes for an attacker to takeover the network as the network grows due to requirement of higher CPU power (atleast 51%) for the attacker to be successful. Nodes can rejoin and leave the network at will with the help of accepting the
+                proof-of-work chain as proof of what happened while they were gone. With all the nodes working towards verifying transactions and mining new bitcoins using there CPU power, a reward system is devised for them to be compensated for their
+                work and keep nodes motivated to help the network running and this is part of the consensus algorithm responsible for reaching agreement about all the transactions and addition of blocks within the network.
+            </p>
+            <h6 class="font-weight-bold">References</h6>
+            <ol class="lead my-4 text-secondary custom-line-height">
+                <li>
+                    <a href="https://www.jdsupra.com/legalnews/resolving-financial-disputes-through-73285/">https://www.jdsupra.com/legalnews/resolving-financial-disputes-through-73285/</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.americanexpress.com/us/foreign-exchange/articles/can-blockchain-eliminate-fraud-in-payment-processing-services/"
+      >https://www.americanexpress.com/us/foreign-exchange/articles/can-blockchain-eliminate-fraud-in-payment-processing-services/</a
+    >
+  </li>
+  <li>
+    <a href="https://cilisos.my/the-crazy-story-of-how-this-malaysian-stole-1-sen-until-he-became-a-millionaire/"
+      >https://cilisos.my/the-crazy-story-of-how-this-malaysian-stole-1-sen-until-he-became-a-millionaire/</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://arstechnica.com/tech-policy/2020/12/how-bitcoin-works/#:~:text=A%20bitcoin%20transaction%20contains%20a,curve%20cryptography%20for%20digital%20signatures"
+      >https://arstechnica.com/tech-policy/2020/12/how-bitcoin-works/#:~:text=A%20bitcoin%20transaction%20contains%20a,curve%20cryptography%20for%20digital%20signatures</a
+    >
+  </li>
+  <li>
+    <a href="https://www.youtube.com/watch?v=AQDCe585Lnc&t=219s">https://www.youtube.com/watch?v=AQDCe585Lnc&t=219s</a>
+                </li>
+                <li>
+                    <a href="https://en.bitcoin.it/wiki/Block_hashing_algorithm">https://en.bitcoin.it/wiki/Block_hashing_algorithm</a>
+                </li>
+                <li>
+                    <a href="https://www.investopedia.com/bitcoin-halving-4843769">https://www.investopedia.com/bitcoin-halving-4843769</a
+    >
+  </li>
+  <li>
+    <a href="https://blog.westerndigital.com/does-storage-break-moores-law/"
+      >https://blog.westerndigital.com/does-storage-break-moores-law/</a
+    >
+  </li>
+  <li>
+    <a href="https://bitcoin.stackexchange.com/questions/20611/why-do-outputs-need-to-be-spent-entirely"
+      >https://bitcoin.stackexchange.com/questions/20611/why-do-outputs-need-to-be-spent-entirely</a
+    >
+  </li>
+  <li>
+    <a href="https://support.blockchain.com/hc/en-us/articles/360000574523-My-receiving-requesting-address-has-changed"
+      >https://support.blockchain.com/hc/en-us/articles/360000574523-My-receiving-requesting-address-has-changed</a
+    >
+  </li>
+</ol>

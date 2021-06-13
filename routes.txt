@@ -1,0 +1,11 @@
+/gdp
+/billionaires
+/athletes
+/cars
+/houses
+/snp500
+/crypto
+/wealthy
+/nba
+/pres-candidates
+/btcppr

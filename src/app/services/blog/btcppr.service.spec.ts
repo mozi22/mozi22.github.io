@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { TableService } from './table.service';
 
-describe('TableService', () => {
-  let service: TableService<any>;
+import { BtcpprService } from './btcppr.service';
+
+describe('BtcpprService', () => {
+  let service: BtcpprService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TableService);
+    service = TestBed.inject(BtcpprService);
   });
 
   it('should be created', () => {

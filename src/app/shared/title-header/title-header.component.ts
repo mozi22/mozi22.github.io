@@ -14,6 +14,7 @@ export class TitleHeaderComponent implements OnInit, OnChanges {
   @Input() public title: string = '';
   @Input() public description: string = '';
   @Input() public cover: string = '';
+  @Input() public featureEnabled: boolean | undefined = true;
 
   @Output() selectedCoin = new EventEmitter<number>();
 

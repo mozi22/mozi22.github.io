@@ -17,9 +17,11 @@ import { TableService } from './table.service';
 })
 export class CarService extends TableService<Car> implements IService<Car> {
   readonly _TITLE: string = environment.SEO.static_pages.cars.title;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.cars.shortDescription;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.cars.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.cars.keywords;
   readonly _COVER: string = environment.SEO.static_pages.cars.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Audi';
   readonly source = 'https://fastestlaps.com/lists/top-most-expensive-cars';
@@ -35,7 +37,7 @@ export class CarService extends TableService<Car> implements IService<Car> {
   }
 
   public setupSEOTags() {
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.cars}`);
   }
   protected matches(tableData: Worth<Car>, term: string, pipe: PipeTransform): boolean {
@@ -60,6 +62,9 @@ export class CarService extends TableService<Car> implements IService<Car> {
 
   public get description(): string {
     return this._DESCRIPTION;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get dataTable(): Observable<Worth<Car>[]> {

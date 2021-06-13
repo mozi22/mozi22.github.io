@@ -5,6 +5,7 @@ import { IService } from '@models/interfaces/general/IService';
 import { Athlete } from '@models/interfaces/scrapped/Athlete';
 import { Billionaire } from '@models/interfaces/scrapped/Billionaire';
 import { Country } from '@models/interfaces/scrapped/Country';
+import { BtcpprService } from './blog/btcppr.service';
 import { CoinService } from './coin.service';
 import { SeoService } from './seo.service';
 import { AthleteService } from './table/athlete.service';
@@ -46,6 +47,8 @@ export class FactoryService {
         return new NbaService(this._pipe, this._seoService);
       case `/${environment.routes.presidentialCandidates}`:
         return new PresidentialCandidatesService(this._pipe, this._seoService);
+      case `/${environment.routes.btcppr}`:
+        return new BtcpprService(this._pipe, this._seoService);
       default:
         return new GdpService(this._pipe, this._seoService);
     }

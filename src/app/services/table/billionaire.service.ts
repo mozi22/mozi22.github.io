@@ -14,9 +14,11 @@ import { TableService } from './table.service';
 
 export class BillionaireService extends TableService<Billionaire> implements IService<Billionaire> {
   readonly _TITLE: string = environment.SEO.static_pages.billionaires.title;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.billionaires.shortDescription;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.billionaires.description;
   readonly _KEYWORDS: string = environment.SEO.static_pages.billionaires.keywords;
   readonly _COVER: string = environment.SEO.static_pages.billionaires.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Bill';
   readonly source = 'https://forbes400.herokuapp.com/api/forbes400';
@@ -33,7 +35,7 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
 
   public setupSEOTags() {
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.billionaires}`);
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
   }
 
   protected matches(tableData: Worth<Billionaire>, term: string, pipe: PipeTransform): boolean {
@@ -58,6 +60,9 @@ export class BillionaireService extends TableService<Billionaire> implements ISe
 
   public get description(): string {
     return this._DESCRIPTION;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get dataTable(): Observable<Worth<Billionaire>[]> {

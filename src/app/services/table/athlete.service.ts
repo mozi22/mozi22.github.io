@@ -15,8 +15,10 @@ import { TableService } from './table.service';
 export class AthleteService extends TableService<Athlete> implements IService<Athlete> {
   readonly _TITLE: string = environment.SEO.static_pages.athletes.title;
   readonly _DESCRIPTION: string = environment.SEO.static_pages.athletes.description;
+  readonly _SHORT_DESCRIPTION: string = environment.SEO.static_pages.athletes.shortDescription;
   readonly _KEYWORDS: string = environment.SEO.static_pages.athletes.keywords;
   readonly _COVER: string = environment.SEO.static_pages.athletes.cover;
+  readonly _DYNAMIC_FEATURE: boolean = true;
 
   readonly _PLACEHOLDER = 'Search... e.g Neymar';
   readonly source = 'https://www.forbes.com/athletes/list';
@@ -33,7 +35,7 @@ export class AthleteService extends TableService<Athlete> implements IService<At
 
   public setupSEOTags() {
     this.seoService.updateCanonicalUrl(`${environment.base}/${environment.routes.athletes}`);
-    this.seoService.setupSEOTags(this._TITLE, this._DESCRIPTION, this._KEYWORDS);
+    this.seoService.setupSEOTags(this._TITLE, this._SHORT_DESCRIPTION, this._KEYWORDS);
   }
 
   protected matches(tableData: Worth<Athlete>, term: string, pipe: PipeTransform): boolean {
@@ -55,6 +57,9 @@ export class AthleteService extends TableService<Athlete> implements IService<At
   }
   public get cover(): string {
     return this._COVER;
+  }
+  public get shortDescription(): string {
+    return this._SHORT_DESCRIPTION;
   }
 
   public get description(): string {

@@ -49,12 +49,18 @@ const routes: Routes = [
     path: environment.routes.home,
     component: HomeComponent,
   },
+  {
+    path: environment.routes.btcppr,
+    component: ComparisonsComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
